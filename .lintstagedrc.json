@@ -1,6 +1,6 @@
 {
     "*.ts": [
-        "eslint 'src/**'",
+        "eslint --ext .ts,.vue src",
         "yarn test"
     ]
 }
