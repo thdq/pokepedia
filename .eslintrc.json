@@ -1,5 +1,6 @@
 {
     "extends": [
         "plugin:vue/vue3-recommended"
-    ]
+    ],
+    "ignorePatterns": ["**/*.d.ts"]
 }
