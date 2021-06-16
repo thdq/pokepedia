@@ -14,6 +14,8 @@
         "ecmaVersion": 2021
     },
     "plugins": [],
-    "rules": {},
+    "rules": {
+        "vue/html-indent": ["error", 4]
+    },
     "ignorePatterns": ["**/*.d.ts"]
 }
