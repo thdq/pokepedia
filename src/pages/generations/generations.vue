@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="text-gray-500 font-semibold text-2xl tracking-wide my-4">
-            # Gerações de games
+            <span class="text-secondary"># </span> Gerações de games
         </h2>
 
         <div v-if="requestStatus <= 1">
@@ -31,6 +31,7 @@
 import { AxiosStatic } from 'axios'
 import { defineComponent, onMounted, ref, inject } from 'vue'
 import { GenerationModel } from '../../domain/models/generations-model'
+import { RemoteGetAllGenerations } from '../../data/usecases/get-all-generations/get-all-generations'
 import { PromiseStatus } from '../../helpers/promise-enum'
 
 export default defineComponent({
@@ -52,7 +53,7 @@ export default defineComponent({
             try {
                 requestStatus.value = PromiseStatus.pending
 
-                generations.value = await $axios.get("/generation").then(res => res.data)
+                generations.value = await new RemoteGetAllGenerations($axios).getAllGenerations()
 
             } catch (error) {
 
@@ -64,8 +65,6 @@ export default defineComponent({
                 if(requestStatus.value != PromiseStatus.error) requestStatus.value = PromiseStatus.success
 
             }
-
-
 
         })
 
