@@ -15,7 +15,7 @@
     },
     "plugins": [],
     "rules": {
-        "vue/html-indent": ["error", 4]
+        "vue/html-indent": ["warn", 4]
     },
     "ignorePatterns": ["**/*.d.ts"]
 }
