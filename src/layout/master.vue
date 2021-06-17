@@ -2,7 +2,9 @@
     <div>
         <Sidebar>
             <template #title>
-                <h1 class="font-bangers"> PokePedia </h1>
+                <router-link to="/">
+                    <h1 class="font-bangers"> PokePedia </h1>
+                </router-link>
             </template>
             <template #content>
                 <ul class="flex flex-col py-4 space-y-1">
