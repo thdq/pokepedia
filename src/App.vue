@@ -1,8 +1,6 @@
 <template>
-    <div id="root">
-        <Master />
-    </div>
-    <router-view />
+    <Master />
+    <router-view class="pok-main" />
 </template>
 
 <script lang="ts">
@@ -18,4 +16,13 @@ export default defineComponent({
 </script>
 
 <style>
+
+#app {
+    @apply flex flex-1
+}
+
+.pok-main {
+    @apply flex flex-1 my-8
+}
+
 </style>
