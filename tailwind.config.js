@@ -8,7 +8,8 @@ module.exports = {
                 secondary: '#ff5d67',
             },
             fontFamily: {
-                'bangers': ['"Bangers"', 'cursive']
+                'bangers': ['"Bangers"', 'cursive'],
+                'poppins': ['"Inter"', 'sans-serif']
             }
         },
     },
