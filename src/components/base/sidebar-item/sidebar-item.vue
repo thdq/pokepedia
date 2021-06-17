@@ -32,5 +32,10 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style>
+
+.router-link-active .icon {
+    @apply border-primary border-2
+}
+
 </style>

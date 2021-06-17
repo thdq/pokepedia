@@ -1,12 +1,10 @@
 <template>
-    <div>
-        <div class="pok-sidebar">
-            <div class="pok-sidebar--title">
-                <slot name="title" />
-            </div>
-            <div class="pok-sidebar--content">
-                <slot name="content" />
-            </div>
+    <div class="pok-sidebar">
+        <div class="pok-sidebar--title">
+            <slot name="title" />
+        </div>
+        <div class="pok-sidebar--content">
+            <slot name="content" />
         </div>
     </div>
 </template>
@@ -29,7 +27,7 @@ export default defineComponent({
 
 .pok-sidebar {
     height: 90vh;
-    @apply fixed flex flex-col top-0 left-0 w-64 bg-white border-white border-2 rounded-3xl my-8 mx-6 shadow-md
+    @apply flex flex-col top-0 left-0 w-64 bg-white border-white border-2 rounded-3xl my-8 mx-6 shadow-md float-left
 }
 
 .pok-sidebar--title {

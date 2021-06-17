@@ -11,7 +11,7 @@
                     </SidedarItem>
                     <SidedarItem>
                         <router-link class="w-full flex items-center" to="/generations">
-                            <span class="inline-flex justify-center items-center ml-4 bg-white rounded-full p-1">
+                            <span class="icon inline-flex justify-center items-center ml-4 bg-white rounded-full p-1">
                                 <img src="../assets/images/iconfinder.svg" class="w-5 h-5" />
                             </span>
                             <span class="ml-2 text-sm tracking-wide truncate">Gerações</span>
