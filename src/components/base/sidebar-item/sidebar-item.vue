@@ -6,7 +6,7 @@
             </div>
         </li>
         <li v-else>
-            <span class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-primary pr-6">
+            <span class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-primary text-gray-600 hover:text-white rounded-md border-transparent hover:border-primary pr-6">
                 <slot />
             </span>
         </li>

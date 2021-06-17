@@ -33,7 +33,7 @@ export default defineComponent({
 }
 
 .pok-sidebar--title {
-    @apply flex items-center tracking-wide justify-center h-14 text-5xl text-transparent bg-clip-text bg-gradient-to-bl from-pink-700 to-primary
+    @apply flex items-center tracking-wide justify-center h-14 text-5xl text-transparent bg-clip-text bg-gradient-to-bl from-secondary to-primary
 }
 
 .pok-sidebar--content {
