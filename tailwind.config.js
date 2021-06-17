@@ -4,8 +4,8 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: '#f3123c',
-                secondary: '#ff5d67',
+                primary: '#2a75bb',
+                secondary: '#3c5aa6',
             },
             fontFamily: {
                 'bangers': ['"Bangers"', 'cursive'],
