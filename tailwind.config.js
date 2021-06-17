@@ -6,6 +6,9 @@ module.exports = {
             colors: {
                 primary: '#f3123c',
                 secondary: '#ff5d67',
+            },
+            fontFamily: {
+                'bangers': ['"Bangers"', 'cursive']
             }
         },
     },
