@@ -7,7 +7,7 @@
             <div class="card--content">
                 <slot name="content" />
             </div>
-            <div class="py-4">
+            <div>
                 <slot name="footer" />
             </div>
         </div>
