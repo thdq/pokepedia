@@ -17,7 +17,10 @@ export class RemoteGetAllGenerations implements GetAllGenerations, GetDetailsGen
         const generations: GenerationModel = await this.axios.get("/generation").then(res => res.data)
 
         for (const gen of generations.results) {
-            const details = await this.getDetailsGeneration(gen.url)
+
+            const id = gen.url.substring(gen.url.lastIndexOf("/")-1, gen.url.lastIndexOf("/"))
+
+            const details = await this.getDetailsGeneration(id)
 
             gen.details = details
         }
@@ -26,9 +29,9 @@ export class RemoteGetAllGenerations implements GetAllGenerations, GetDetailsGen
 
     }
 
-    async getDetailsGeneration (url: string): Promise<GenerationDetailsModel> {
+    async getDetailsGeneration (id: string): Promise<GenerationDetailsModel> {
 
-        const details: GenerationDetailsModel = await this.axios.get(url).then(res => res.data)
+        const details: GenerationDetailsModel = await this.axios.get(id).then(res => res.data)
 
         return details
     }
