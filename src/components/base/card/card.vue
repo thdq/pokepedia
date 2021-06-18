@@ -34,7 +34,7 @@ export default defineComponent({
 }
 
 .card-main {
-    @apply py-4 px-8 mt-3
+    @apply py-8 px-8 mt-3
 }
 
 </style>
