@@ -6,7 +6,7 @@
         <div v-else-if="requestStatus === PromiseStatus.success">
             <Card>
                 <template #title>
-                    <h2 class="text-gray-800 font-semibold text-3xl tracking-wide mb-2 float-left">
+                    <h2 class="text-gray-800 font-semibold text-4xl tracking-wide mb-2 float-left">
                         {{ generation.name }}
                     </h2>
                 </template>
@@ -20,13 +20,13 @@
                                 <div class="mt-5">
                                     <img
                                         v-image-fallback
-                                        class="w-6/12 rounded-sm"
-                                        :src="`/src/assets/images/${generation?.main_region?.name}.png`"
+                                        class="max-w-full max-h-96 rounded-sm"
+                                        :src="`/src/assets/images/regions/${generation?.main_region?.name}.png`"
                                     >
                                 </div>
                             </div>
-                            <div class="py-7" v-if="generation.types.length">
-                                Tipos de mecânicas:
+                            <div class="py-7 border-t-2" v-if="generation.types.length">
+                                <h3 class="font-bold tracking-wider text-lg"> Tipos de mecânicas: </h3>
                                 <div class="mt-5 grid grid-cols-7 gap-y-4 capitalize">
                                     <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
                                         <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
@@ -46,7 +46,7 @@
                                 <Table :itemsPerPage="10" :data="abilitiesDataTable.data" :columns="abilitiesDataTable.columns" />
                             </div>
                             <div class="py-5">
-                                Grupos de versão
+                                <h3 class="font-bold tracking-wider text-lg"> Versão de jogos: </h3>
                                 <div class=" grid grid-cols-4 gap-8">
                                     <div v-for="(item, i) in generation.version_groups" :key="i" class="flex flex-col justify-center items-center max-w-sm mx-auto my-8">
                                         <img v-image-fallback :src="`src/assets/images/versions/${item.name}.png`" class="bg-gray-300 h-64 w-full rounded-lg bg-cover bg-center"/>
