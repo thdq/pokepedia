@@ -25,15 +25,9 @@
                                     >
                                 </div>
                             </div>
-
-                            <div class="grid grid-cols-2 gap-9 capitalize border-t-2 border-b-2 py-7 border-gray-100">
-                                <Table :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
-                                <Table :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
-                            </div>
                             <div class="py-7">
                                 Tipos de mecânicas:
                                 <div class="mt-5 grid grid-cols-7 gap-y-4 capitalize">
-
                                     <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
                                         <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
                                             <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
@@ -43,6 +37,10 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-9 capitalize border-t-2 border-b-2 py-7 border-gray-100">
+                                <Table :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
+                                <Table :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
                             </div>
                         </div>
                     </div>
