@@ -25,7 +25,7 @@
                                     >
                                 </div>
                             </div>
-                            <div class="py-7">
+                            <div class="py-7" v-if="generation.types.length">
                                 Tipos de mecânicas:
                                 <div class="mt-5 grid grid-cols-7 gap-y-4 capitalize">
                                     <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
@@ -39,8 +39,11 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-9 capitalize border-t-2 border-b-2 py-7 border-gray-100">
-                                <Table :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
-                                <Table :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
+                                <Table v-if="movesDataTable.data.length" :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
+                                <Table v-if="pokemonsDataTable.data.length" :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
+                            </div>
+                            <div v-if="abilitiesDataTable.data.length" class="grid grid-rows-1 capitalize border-b-2 py-7 border-gray-100">
+                                <Table :itemsPerPage="10" :data="abilitiesDataTable.data" :columns="abilitiesDataTable.columns" />
                             </div>
                             <div class="py-5">
                                 Grupos de versão
@@ -135,13 +138,27 @@ export default defineComponent({
             return { data, columns }
         })
 
+        const abilitiesDataTable = computed(() => {
+
+            const data = generation.value?.abilities
+
+            const columns = [{
+                key: "name",
+                label: "Habilidades"
+            }]
+
+            return { data, columns }
+
+        })
+
         return {
             generation,
             requestStatus,
             PromiseStatus,
             movesDataTable,
             pokemonsDataTable,
-            typeDataTable
+            typeDataTable,
+            abilitiesDataTable
         }
     }
 })
