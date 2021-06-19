@@ -42,6 +42,19 @@
                                 <Table :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
                                 <Table :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
                             </div>
+                            <div class="py-5">
+                                Grupos de versão
+                                <div class=" grid grid-cols-4 gap-8">
+                                    <div v-for="(item, i) in generation.version_groups" :key="i" class="flex flex-col justify-center items-center max-w-sm mx-auto my-8">
+                                        <img v-image-fallback :src="`src/assets/images/versions/${item.name}.png`" class="bg-gray-300 h-64 w-full rounded-lg bg-cover bg-center"/>
+                                        <div class="w-56 md:w-64 bg-white -mt-10 shadow-md rounded-md overflow-hidden">
+                                            <div class="py-4 text-center font-bold uppercase tracking-wide text-gray-800">
+                                                {{ item.name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </template>
@@ -54,11 +67,13 @@
 import { AxiosStatic } from 'axios'
 import { computed, defineComponent, inject, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import card from '../../components/base/card/card.vue'
 import { RemoteGetGenerations } from '../../data/usecases/get-all-generations/get-all-generations'
 import { GenerationDetailsModel } from '../../domain/models/generation-details-model'
 import { PromiseStatus } from '../../helpers/promise-enum'
 
 export default defineComponent({
+  components: { card },
     setup () {
         const $axios = inject('$axios') as AxiosStatic
         const route = useRoute()
@@ -204,6 +219,10 @@ export default defineComponent({
 
 .bg-custom-water {
     background: #539DDF;
+}
+
+.bg-custom-unknown {
+    background: #151515
 }
 
 </style>
