@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../pages/home/home.vue'
 import NotFound from '../pages/notfound/notfound.vue'
 import Generations from '../pages/generations/generations.vue'
+import Generation from '../pages/generation/generation.vue'
 import { App } from 'vue'
 
 export default (app: App): void => {
@@ -14,6 +15,10 @@ export default (app: App): void => {
         {
             path: "/generations",
             component: Generations
+        },
+        {
+            path: "/generation/:id",
+            component: Generation
         },
         {
             path: "/:pathMatch(.*)*",

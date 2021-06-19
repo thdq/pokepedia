@@ -57,15 +57,13 @@
                             </template>
                             <template #footer >
                                 <div class="flex flex-row-reverse space-x-4 space-x-reverse w-full">
-                                    <button class="button-details">Ver todos os detalhes</button>
+                                    <button class="button-details" @click="goToDetailsPage(item.url)">Ver todos os detalhes</button>
                                 </div>
                             </template>
                         </Card>
                     </TimelineItem>
                 </div>
             </Timeline>
-
-
         </div>
         <div v-else-if="requestStatus === PromiseStatus.error">
             um erro
@@ -77,9 +75,10 @@
 import { AxiosStatic } from 'axios'
 import { defineComponent, onMounted, ref, inject } from 'vue'
 import { GenerationModel } from '../../domain/models/generations-model'
-import { RemoteGetAllGenerations } from '../../data/usecases/get-all-generations/get-all-generations'
+import { RemoteGetGenerations } from '../../data/usecases/get-all-generations/get-all-generations'
 import { PromiseStatus } from '../../helpers/promise-enum'
 import { LocationMarkerIcon } from '@heroicons/vue/outline'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
     components: {
@@ -87,6 +86,7 @@ export default defineComponent({
     },
     setup () {
         const $axios = inject('$axios') as AxiosStatic
+        const router = useRouter()
 
         const generations = ref<GenerationModel>({
             count: 0,
@@ -103,7 +103,7 @@ export default defineComponent({
             try {
                 requestStatus.value = PromiseStatus.pending
 
-                generations.value = await new RemoteGetAllGenerations($axios).getAllGenerations()
+                generations.value = await new RemoteGetGenerations($axios).getAllGenerations()
 
             } catch (error) {
 
@@ -118,11 +118,20 @@ export default defineComponent({
 
         })
 
+        const goToDetailsPage = (urlItem: string): void => {
+
+            const id = urlItem.substring(urlItem.lastIndexOf("/")-1, urlItem.lastIndexOf("/"))
+
+            router.push(`/generation/${id}`)
+
+        }
+
 
         return {
             generations,
             requestStatus,
-            PromiseStatus
+            PromiseStatus,
+            goToDetailsPage
         }
     }
 })
@@ -131,7 +140,7 @@ export default defineComponent({
 <style scoped>
 
 .button-details {
-    @apply bg-primary hover:bg-secondary px-5 py-3 text-sm font-medium tracking-wider border text-white rounded-md
+    @apply bg-secondary hover:bg-primary px-5 py-3 text-sm font-medium tracking-wider border text-white rounded-md
 }
 
 </style>
