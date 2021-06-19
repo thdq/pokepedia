@@ -4,7 +4,7 @@ import { GenerationDetailsModel } from '../../../domain/models/generation-detail
 import { GetAllGenerations } from '../../../domain/usecases/get-all-generations'
 import { GetDetailsGeneration } from '../../../domain/usecases/get-generation-details'
 
-export class RemoteGetAllGenerations implements GetAllGenerations, GetDetailsGeneration {
+export class RemoteGetGenerations implements GetAllGenerations, GetDetailsGeneration {
     private readonly axios: AxiosStatic
 
     constructor (axios : AxiosStatic) {
@@ -31,7 +31,7 @@ export class RemoteGetAllGenerations implements GetAllGenerations, GetDetailsGen
 
     async getDetailsGeneration (id: string): Promise<GenerationDetailsModel> {
 
-        const details: GenerationDetailsModel = await this.axios.get(id).then(res => res.data)
+        const details: GenerationDetailsModel = await this.axios.get(`/generation/${id}`).then(res => res.data)
 
         return details
     }
