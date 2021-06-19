@@ -18,12 +18,31 @@
                                     {{ generation?.main_region?.name }}
                                 </span>
                                 <div class="mt-5">
-                                    <img class="w-6/12 rounded-sm" v-image-fallback :src="`/src/assets/images/${generation?.main_region?.name}.png`" />
+                                    <img
+                                        v-image-fallback
+                                        class="w-6/12 rounded-sm"
+                                        :src="`/src/assets/images/${generation?.main_region?.name}.png`"
+                                    >
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-2 gap-9">
+                            <div class="grid grid-cols-2 gap-9 capitalize border-t-2 border-b-2 py-7 border-gray-100">
                                 <Table :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
+                                <Table :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
+                            </div>
+                            <div class="py-7">
+                                Tipos de mecânicas:
+                                <div class="mt-5 grid grid-cols-7 gap-y-4 capitalize">
+
+                                    <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
+                                        <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
+                                            <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
+                                        </div>
+                                        <div class="mt-12">
+                                            <p class="text-xl font-semibold my-2 text-center">{{ item.name }}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -71,30 +90,122 @@ export default defineComponent({
 
             const data = generation.value?.moves
 
-            const columns = [
-                {
-                    key: "name",
-                    label: "Movimentos"
-                }
-            ]
+            const columns = [{
+                key: "name",
+                label: "Movimentos"
+            }]
 
-            return {
-                data,
-                columns
-            }
+            return { data, columns }
         })
 
+        const pokemonsDataTable = computed(() => {
+
+            const data = generation.value?.pokemon_species
+
+            const columns = [{
+                key: "name",
+                label: "Espécie de pokemons"
+            }]
+
+            return { data, columns }
+        })
+
+        const typeDataTable = computed(() => {
+
+            const data = generation.value?.types
+
+            const columns = [{
+                key: "name",
+                label: "Tipos de mecânicas"
+            }]
+
+            return { data, columns }
+        })
 
         return {
             generation,
             requestStatus,
             PromiseStatus,
-            movesDataTable
+            movesDataTable,
+            pokemonsDataTable,
+            typeDataTable
         }
     }
 })
 </script>
 
 <style scoped>
+
+.bg-custom-bug {
+    background: #92BC2C;
+}
+
+.bg-custom-dark {
+    background: #595761;
+}
+
+.bg-custom-dragon {
+    background: #0C69C8;
+}
+
+.bg-custom-electric {
+    background: #F2D94E;
+}
+
+.bg-custom-fairy {
+    background: #EE90E6;
+}
+
+.bg-custom-fighting {
+    background: #D3425F;
+}
+
+.bg-custom-fire {
+    background: #FBA54C;
+}
+
+.bg-custom-flying {
+    background: #A1BBEC;
+}
+
+.bg-custom-ghost {
+    background: #5F6DBC;
+}
+
+.bg-custom-grass {
+    background: #5FBD58;
+}
+
+.bg-custom-ground {
+    background: #DA7C4D;
+}
+
+.bg-custom-ice {
+    background: #75D0C1;
+}
+
+.bg-custom-normal {
+    background: #A0A29F;
+}
+
+.bg-custom-poison {
+    background: #B763CF;
+}
+
+.bg-custom-psychic {
+    background: #FA8581;
+}
+
+.bg-custom-rock {
+    background: #C9BB8A;
+}
+
+.bg-custom-steel {
+    background: #5695A3;
+}
+
+.bg-custom-water {
+    background: #539DDF;
+}
 
 </style>

@@ -33,11 +33,6 @@
                                             </span>
                                         </div>
                                         <div class="mb-5">
-                                            Idiomas: <span class="font-semibold">
-                                                <Chips :limit="3" :items="item.details.names" />
-                                            </span>
-                                        </div>
-                                        <div class="mb-5">
                                             Tipos de movimentos: <span class="font-semibold">
                                                 <Chips :limit="3" :items="item.details.moves" />
                                             </span>
