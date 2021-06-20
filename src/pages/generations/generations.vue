@@ -27,7 +27,7 @@
                                     <h2 class="text-gray-800 font-semibold text-3xl tracking-wide mb-2 float-left">
                                         {{ item.name }}
                                     </h2>
-                                    <span class="float-right text-gray-500 flex">
+                                    <span class="float-right text-gray-500 flex mq-max-xl:hidden">
                                         <LocationMarkerIcon class="w-6 h-6 text-secondary mr-1" /> {{ item.details.main_region.name.toUpperCase() }}
                                     </span>
                                 </div>
@@ -149,7 +149,8 @@ export default defineComponent({
 <style scoped>
 
 .button-details {
-    @apply bg-secondary hover:bg-primary px-5 py-3 text-sm font-medium tracking-wider border text-white rounded-md
+    @apply bg-secondary hover:bg-primary px-5 py-3 text-sm font-medium tracking-wider border text-white rounded-md;
+    @apply mq-max-xl:w-full
 }
 
 </style>
