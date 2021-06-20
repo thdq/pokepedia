@@ -4,7 +4,7 @@
             <Skeleton type="card" />
         </div>
         <div v-else-if="requestStatus === PromiseStatus.success">
-            <Card>
+            <Card class="mb-10">
                 <template #title>
                     <h2 class="text-gray-800 font-semibold text-4xl tracking-wide mb-2 float-left">
                         {{ generation.name }}
@@ -25,37 +25,60 @@
                                     >
                                 </div>
                             </div>
-                            <div class="py-7 border-t-2" v-if="generation.types.length">
-                                <h3 class="font-bold tracking-wider text-lg"> Tipos de mecânicas: </h3>
-                                <div class="mt-5 grid grid-cols-7 gap-y-4 capitalize">
-                                    <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
-                                        <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
-                                            <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
-                                        </div>
-                                        <div class="mt-12">
-                                            <p class="text-xl font-semibold my-2 text-center">{{ item.name }}</p>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                </template>
+            </Card>
+            <Card class="mb-10">
+                <template #title>
+                    <h2 class="text-gray-800 font-semibold text-xl tracking-wide mb-2 float-left">
+                        Tipos de mecânicas
+                    </h2>
+                </template>
+                <template #content>
+                    <div class="" v-if="generation.types.length">
+                        <div class="mt-5 grid grid-cols-7 gap-y-4 capitalize">
+                            <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
+                                <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
+                                    <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
+                                </div>
+                                <div class="mt-12">
+                                    <p class="text-xl font-semibold my-2 text-center">{{ item.name }}</p>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-2 gap-9 capitalize border-t-2 border-b-2 py-7 border-gray-100">
-                                <Table v-if="movesDataTable.data.length" :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
-                                <Table v-if="pokemonsDataTable.data.length" :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
-                            </div>
-                            <div v-if="abilitiesDataTable.data.length" class="grid grid-rows-1 capitalize border-b-2 py-7 border-gray-100">
-                                <Table :itemsPerPage="10" :data="abilitiesDataTable.data" :columns="abilitiesDataTable.columns" />
-                            </div>
-                            <div class="py-5">
-                                <h3 class="font-bold tracking-wider text-lg"> Versão de jogos: </h3>
-                                <div class=" grid grid-cols-4 gap-8">
-                                    <div v-for="(item, i) in generation.version_groups" :key="i" class="flex flex-col justify-center items-center max-w-sm mx-auto my-8">
-                                        <img v-image-fallback :src="`src/assets/images/versions/${item.name}.png`" class="bg-gray-300 h-64 w-full rounded-lg bg-cover bg-center"/>
-                                        <div class="w-56 md:w-64 bg-white -mt-10 shadow-md rounded-md overflow-hidden">
-                                            <div class="py-4 text-center font-bold uppercase tracking-wide text-gray-800">
-                                                {{ item.name }}
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                </template>
+            </Card>
+            <Card class="mb-10">
+                <template #title>
+                    <h2 class="text-gray-800 font-semibold text-xl tracking-wide mb-2 float-left">
+                        Informações gerais
+                    </h2>
+                </template>
+                <template #content>
+                    <div class="grid grid-cols-2 gap-x-9 capitalize border-gray-100">
+                        <Table v-if="movesDataTable.data.length" :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
+                        <Table v-if="pokemonsDataTable.data.length" :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
+                    </div>
+                    <div v-if="abilitiesDataTable.data.length" class="grid grid-rows-1 capitalize border-b-2 py-7 border-gray-100">
+                        <Table :itemsPerPage="10" :data="abilitiesDataTable.data" :columns="abilitiesDataTable.columns" />
+                    </div>
+                </template>
+            </Card>
+            <Card class="mb-10">
+                <template #title>
+                    <h2 class="text-gray-800 font-semibold text-xl tracking-wide mb-2 float-left">
+                        Versão de jogos
+                    </h2>
+                </template>
+                <template #content>
+                    <div class="grid grid-cols-4 gap-x-8">
+                        <div v-for="(item, i) in generation.version_groups" :key="i" class="flex flex-col justify-center items-center mx-auto">
+                            <img v-image-fallback :src="`src/assets/images/versions/${item.name}.png`" class="bg-gray-300 h-64 w-full rounded-lg bg-cover bg-center"/>
+                            <div class="w-56 md:w-64 bg-white -mt-10 shadow-md rounded-md overflow-hidden">
+                                <div class="py-4 text-center font-bold uppercase tracking-wide text-gray-800">
+                                    {{ item.name }}
                                 </div>
                             </div>
                         </div>
@@ -70,13 +93,11 @@
 import { AxiosStatic } from 'axios'
 import { computed, defineComponent, inject, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import card from '../../components/base/card/card.vue'
 import { RemoteGetGenerations } from '../../data/usecases/get-all-generations/get-all-generations'
 import { GenerationDetailsModel } from '../../domain/models/generation-details-model'
 import { PromiseStatus } from '../../helpers/promise-enum'
 
 export default defineComponent({
-  components: { card },
     setup () {
         const $axios = inject('$axios') as AxiosStatic
         const route = useRoute()
