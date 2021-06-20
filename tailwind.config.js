@@ -10,6 +10,13 @@ module.exports = {
             fontFamily: {
                 'bangers': ['"Bangers"', 'cursive'],
                 'poppins': ['"Inter"', 'sans-serif']
+            },
+            screens: {
+                'mq-max-2xl': {'max': '1535px'},
+                'mq-max-xl': {'max': '1279px'},
+                'mq-max-lg': {'max': '1023px'},
+                'mq-max-md': {'max': '767px'},
+                'mq-max-sm': {'max': '639px'}
             }
         },
     },

@@ -36,8 +36,8 @@
                     </h2>
                 </template>
                 <template #content>
-                    <div class="" v-if="generation.types.length">
-                        <div class="mt-5 grid grid-cols-7 gap-y-4 capitalize">
+                    <div v-if="generation.types.length">
+                        <div class="types-grid">
                             <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
                                 <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
                                     <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
@@ -73,7 +73,7 @@
                     </h2>
                 </template>
                 <template #content>
-                    <div class="grid grid-cols-4 gap-x-8">
+                    <div class="versions-grid">
                         <div v-for="(item, i) in generation.version_groups" :key="i" class="flex flex-col justify-center items-center mx-auto">
                             <img v-image-fallback :src="`src/assets/images/versions/${item.name}.png`" class="bg-gray-300 h-64 w-full rounded-lg bg-cover bg-center"/>
                             <div class="w-56 md:w-64 bg-white -mt-10 shadow-md rounded-md overflow-hidden">
@@ -186,5 +186,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+
+.types-grid {
+    @apply mt-5 gap-4 capitalize grid grid-cols-7;
+    @apply mq-max-2xl:grid-cols-5 mq-max-xl:grid-cols-4 mq-max-lg:grid-cols-3 mq-max-md:grid-cols-2;
+}
+
+.versions-grid {
+    @apply grid grid-cols-4 gap-x-8;
+    @apply mq-max-2xl:grid-cols-3 mq-max-xl:grid-cols-2 mq-max-lg:grid-cols-1 mq-max-md:grid-cols-none;
+}
 
 </style>
