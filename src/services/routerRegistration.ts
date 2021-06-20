@@ -11,6 +11,7 @@ export default (app: App): void => {
     const routes: RouteRecordRaw[] = [
         {
             path: "",
+            redirect: "/generations",
             component: Home
         },
         {
