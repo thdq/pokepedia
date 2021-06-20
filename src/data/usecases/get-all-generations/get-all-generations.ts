@@ -18,7 +18,9 @@ export class RemoteGetGenerations implements GetAllGenerations, GetDetailsGenera
 
         for (const gen of generations.results) {
 
-            const id = gen.url.substring(gen.url.lastIndexOf("/")-1, gen.url.lastIndexOf("/"))
+            const id = gen.url.substring(gen.url.indexOf("n/")+2, gen.url.lastIndexOf("/"))
+
+            console.log(id)
 
             const details = await this.getDetailsGeneration(id)
 

@@ -129,7 +129,7 @@ export default defineComponent({
 
         const goToDetailsPage = (urlItem: string): void => {
 
-            const id = urlItem.substring(urlItem.lastIndexOf("/")-1, urlItem.lastIndexOf("/"))
+            const id = urlItem.substring(urlItem.indexOf("n/")+2, urlItem.lastIndexOf("/"))
 
             router.push(`/generation/${id}`)
 
