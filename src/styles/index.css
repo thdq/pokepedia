@@ -13,7 +13,7 @@ html {
     background: #92BC2C;
 }
 
-.bg-custom-dark {
+.bg-custom-dark, .bg-custom-shadow {
     background: #595761;
 }
 
