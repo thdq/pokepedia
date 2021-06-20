@@ -69,7 +69,13 @@
             </Timeline>
         </div>
         <div v-else-if="requestStatus === PromiseStatus.error">
-            um erro
+            <Card class="my-9">
+                <template #content>
+                    <div class="text-sm mb-10 text-left text-red-600 py-8 bg-red-200 border border-red-400 h-12 flex items-center p-4 rounded-lg" role="alert">
+                        Ocorreu um erro ao exibir as gerações.
+                    </div>
+                </template>
+            </Card>
         </div>
     </div>
 </template>
