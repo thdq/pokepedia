@@ -5,9 +5,17 @@
         </h2>
 
         <div v-if="requestStatus <= 1">
-            <Skeleton type="card" />
-            <Skeleton type="card" />
-            <Skeleton type="card" />
+            <Timeline>
+                <TimelineItem position="left">
+                    <Skeleton type="card" />
+                </TimelineItem>
+                <TimelineItem position="right">
+                    <Skeleton type="card" />
+                </TimelineItem>
+                <TimelineItem position="left">
+                    <Skeleton type="card" />
+                </TimelineItem>
+            </Timeline>
         </div>
         <div v-else-if="requestStatus === PromiseStatus.success">
             <Timeline>
