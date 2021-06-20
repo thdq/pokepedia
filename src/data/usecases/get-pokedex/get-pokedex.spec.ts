@@ -13,6 +13,30 @@ const mockRequests = (idPokemon: number): void => {
     const mock = new MockAdapter(instance)
 
     mock.onGet(`/pokemon/${idPokemon}`).reply(200, {
+        abilities: [],
+        base_experience: 1,
+        forms: [],
+        game_indices: [],
+        height: 1,
+        held_items: [],
+        id: 1,
+        is_default: true,
+        location_area_encounters: "",
+        moves: [],
+        name: "",
+        order: 1,
+        past_types: [],
+        species: {
+            name: "",
+            url: ""
+        },
+        sprites: {},
+        stats: [],
+        types: [],
+        weight: 1
+    })
+
+    mock.onGet(`/pokedex/${idPokemon}`).reply(200, {
             descriptions: [],
             id: 1,
             is_main_series: true,
@@ -121,6 +145,21 @@ describe('RemoteGetPokedex usecase', () => {
         await sut.getAllPokemonInfo(id)
 
         expect(getPokemonSpecieSpy).toHaveBeenCalledWith(id)
+
+    })
+
+    test('Should call getPokedex axios get with correct URL', async () => {
+
+        const id = 5
+
+        const { sut, axiosStub } = makeSut(id)
+
+        const axiosSpy = jest.spyOn(axiosStub, 'get')
+
+        await sut.getPokedex(id)
+
+        expect(axiosSpy).toHaveBeenCalledWith(`/pokedex/${id}`)
+
 
     })
 
