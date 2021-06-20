@@ -12,7 +12,7 @@
                             </tr>
                         </thead>
                         <tbody class="pok-table--body">
-                            <tr v-for="(row, i) in computedData" :key="i">
+                            <tr data-testid="rows" v-for="(row, i) in computedData" :key="i">
                                 <td v-for="(col, j) in columns" :key="j">
                                     <div class="flex items-center">
                                         <span class="font-medium">{{ row[col.key] }}</span>
