@@ -6,7 +6,7 @@
                     <table cellspacing="0" cellpadding="0" class="pok-table">
                         <thead class="pok-table--head">
                             <tr>
-                                <th class="py-3 px-6 text-left" v-for="(col, i) in columns" :key="i" >
+                                <th data-testid="columns" class="py-3 px-6 text-left" v-for="(col, i) in columns" :key="i" >
                                     {{ col.label }}
                                 </th>
                             </tr>

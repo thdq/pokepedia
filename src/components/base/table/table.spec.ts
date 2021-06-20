@@ -51,4 +51,26 @@ describe('Table base component', () => {
 
     })
 
+    test('Should show columns length based on columns props', () => {
+
+        const data = new Array(10).fill({
+            name: "example"
+        })
+
+        const columns = new Array(3).fill({
+            name: "example"
+        })
+
+        const wrapper = makeWrapper({
+            columns,
+            data,
+            itemsPerPage: 5
+        })
+
+        const columnsEl = wrapper.findAll("[data-testid='columns']")
+
+        expect(columnsEl.length).toBe(3)
+
+    })
+
 })
