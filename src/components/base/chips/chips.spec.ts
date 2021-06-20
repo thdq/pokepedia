@@ -45,4 +45,21 @@ describe('Chips base component', () => {
 
     })
 
+    test("Should compute limited items", async () => {
+
+        const items = new Array(10).fill({
+            name: "example"
+        })
+
+        const wrapper = makeWrapper({
+            items,
+            label: "name",
+            limit: 5
+        })
+
+        expect(wrapper.vm.limitedItems.length).toBe(6)
+
+
+    })
+
 })
