@@ -25,48 +25,29 @@ export class RemoteGetPokedex implements GetAllPokemonInfo, GetPokedex, GetPokem
             pokemon,
             pokemonSpecie
         }
-
     }
 
     async getPokedex (id: number): Promise<PokedexModel> {
 
-        try {
+        const pokedex: PokedexModel = await this.axios.get(`/pokedex/${id}`).then(res => res.data)
 
-            const pokedex: PokedexModel = await this.axios.get(`/pokedex/${id}`).then(res => res.data)
-
-            return pokedex
-
-        } catch (error) {
-            throw new Error()
-        }
+        return pokedex
 
     }
 
     async getPokemon (id: number): Promise<PokemonModel> {
 
-        try {
+        const { data: pokemon } = await this.axios.get(`/pokemon/${id}`)
 
-            const pokemon: PokemonModel = await this.axios.get(`/pokemon/${id}`).then(res => res.data)
-
-            return pokemon
-
-        } catch (error) {
-            throw new Error()
-        }
+        return pokemon
 
     }
 
     async getPokemonSpecie (id: number): Promise<PokemonSpecieModel> {
 
-        try {
+        const { data: pokemonSpecie } = await this.axios.get(`/pokemon-species/${id}`)
 
-            const pokemonSpecie: PokemonSpecieModel = await this.axios.get(`/pokemon-species/${id}`).then(res => res.data)
-
-            return pokemonSpecie
-
-        } catch (error) {
-            throw new Error()
-        }
+        return pokemonSpecie
 
     }
 }
