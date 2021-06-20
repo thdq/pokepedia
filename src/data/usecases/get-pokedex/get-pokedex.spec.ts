@@ -110,4 +110,18 @@ describe('RemoteGetPokedex usecase', () => {
 
     })
 
+    test('Should call getPokemonSpecie with correct value', async () => {
+
+        const { sut } = makeSut(7)
+
+        const getPokemonSpecieSpy = jest.spyOn(sut, 'getPokemonSpecie')
+
+        const id = 7
+
+        await sut.getAllPokemonInfo(id)
+
+        expect(getPokemonSpecieSpy).toHaveBeenCalledWith(id)
+
+    })
+
 })
