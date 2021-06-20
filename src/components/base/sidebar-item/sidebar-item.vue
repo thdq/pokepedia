@@ -1,7 +1,7 @@
 <template>
     <div>
         <li v-if="isGroup" class="px-5" >
-            <div class="flex flex-row items-center h-8">
+            <div data-testid="isgroup" class="flex flex-row items-center h-8">
                 <slot />
             </div>
         </li>
