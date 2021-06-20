@@ -84,6 +84,15 @@
                 </template>
             </Card>
         </div>
+        <div v-else-if="requestStatus == PromiseStatus.error">
+            <Card >
+                <template #content>
+                    <div class="text-sm mb-10 text-left text-red-600 py-8 bg-red-200 border border-red-400 h-12 flex items-center p-4 rounded-lg" role="alert">
+                        Ocorreu um erro ao exibir detalhes da geração.
+                    </div>
+                </template>
+            </Card>
+        </div>
     </div>
 </template>
 
@@ -109,7 +118,7 @@ export default defineComponent({
             try {
                 requestStatus.value = PromiseStatus.pending
 
-                const id = route.params.id[0]
+                const id = route.params.id as string
 
                 generation.value = await new RemoteGetGenerations($axios).getDetailsGeneration(id)
 
