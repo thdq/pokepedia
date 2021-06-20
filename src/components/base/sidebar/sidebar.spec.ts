@@ -24,4 +24,12 @@ describe('Sidebar base component', () => {
 
     })
 
+    test('Should contain content slot', () => {
+
+        const wrapper = makeWrapper()
+
+        expect(wrapper.html()).toContain("Any content")
+
+    })
+
 })
