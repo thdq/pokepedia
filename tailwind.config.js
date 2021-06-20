@@ -12,6 +12,7 @@ module.exports = {
                 'poppins': ['"Inter"', 'sans-serif']
             },
             screens: {
+                'mq-max-3xl': {'max': '1910px'},
                 'mq-max-2xl': {'max': '1535px'},
                 'mq-max-xl': {'max': '1279px'},
                 'mq-max-lg': {'max': '1023px'},

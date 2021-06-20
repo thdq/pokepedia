@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-4 gap-y-12 mt-16" v-if="pokedex?.pokemon_entries?.length">
+    <div class="pokedex-grid" v-if="pokedex?.pokemon_entries?.length">
         <div v-for="p in pokedex.pokemon_entries" :key="p.entry_number">
             <Pokemon :id="p.entry_number" />
         </div>
@@ -50,5 +50,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
+
+.pokedex-grid {
+    @apply grid grid-cols-4 gap-y-12 mt-16 place-items-center;
+    @apply mq-max-3xl:grid-cols-3 mq-max-2xl:grid-cols-2 mq-max-lg:grid-cols-1;
+}
 
 </style>
