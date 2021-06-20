@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between items-center w-full" :class="positionClass">
+    <div data-testid="timeline-item" class="flex justify-between items-center w-full" :class="positionClass">
         <div class="order-1 w-5/12"></div>
         <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
                 <img src="/src/assets/images/pokeball.svg" />

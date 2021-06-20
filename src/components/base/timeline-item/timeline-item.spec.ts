@@ -29,4 +29,14 @@ describe('Timeline-item base component', () => {
 
     })
 
+    test('Should set content position based on position props', () => {
+
+        const wrapper = makeWrapper()
+
+        const timelineItemEl = wrapper.find("[data-testid='timeline-item']")
+
+        expect(timelineItemEl.classes()).toContain("flex-row-reverse")
+
+    })
+
 })
