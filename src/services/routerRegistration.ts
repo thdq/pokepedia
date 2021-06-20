@@ -1,9 +1,10 @@
+import { App } from 'vue'
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../pages/home/home.vue'
 import NotFound from '../pages/notfound/notfound.vue'
 import Generations from '../pages/generations/generations.vue'
 import Generation from '../pages/generation/generation.vue'
-import { App } from 'vue'
+import Pokedex from '../pages/pokedex/pokedex.vue'
 
 export default (app: App): void => {
 
@@ -15,6 +16,10 @@ export default (app: App): void => {
         {
             path: "/generations",
             component: Generations
+        },
+        {
+            path: "/pokedex",
+            component: Pokedex
         },
         {
             path: "/generation/:id",

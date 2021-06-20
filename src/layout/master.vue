@@ -19,6 +19,14 @@
                             <span class="ml-2 text-sm tracking-wide truncate">Gerações</span>
                         </router-link>
                     </SidedarItem>
+                    <SidedarItem>
+                        <router-link class="w-full flex items-center" to="/pokedex">
+                            <span class="icon inline-flex justify-center items-center ml-4 bg-white rounded-full p-1">
+                                <img src="../assets/images/pokedex.svg" class="w-5 h-5" />
+                            </span>
+                            <span class="ml-2 text-sm tracking-wide truncate">Pokédex</span>
+                        </router-link>
+                    </SidedarItem>
                 </ul>
             </template>
         </Sidebar>
