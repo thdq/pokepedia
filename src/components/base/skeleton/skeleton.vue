@@ -1,6 +1,6 @@
 <template>
     <div v-if="type === 'card'">
-        <Card class="my-9">
+        <Card data-testid="type-card" class="my-9">
             <template #title>
                 <div class="h-7 bg-gray-300 rounded w-1/4 animate-pulse"></div>
             </template>
