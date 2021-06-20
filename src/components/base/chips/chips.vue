@@ -1,6 +1,6 @@
 <template>
     <div class="mb-3 mt-1 flex flex-wrap -m-1">
-        <span v-for="(item, i) in limitedItems" :key="i" class="pok-chips">
+        <span data-testid="chips" v-for="(item, i) in limitedItems" :key="i" class="pok-chips">
             {{ item[label] }}
         </span>
     </div>

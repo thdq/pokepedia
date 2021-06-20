@@ -79,4 +79,23 @@ describe('Chips base component', () => {
 
     })
 
+    test("Should render items props based on limitedItems computed", async () => {
+
+        const items = new Array(10).fill({
+            name: "example"
+        })
+
+        const wrapper = makeWrapper({
+            items,
+            label: "name",
+            limit: 3
+        })
+
+        const chipsEl = wrapper.findAll("[data-testid='chips']")
+
+        expect(chipsEl.length).toBe(4)
+
+
+    })
+
 })
