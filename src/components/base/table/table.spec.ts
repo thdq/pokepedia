@@ -35,4 +35,20 @@ describe('Table base component', () => {
 
     })
 
+    test('Should compute computedData based on props', () => {
+
+        const data = new Array(10).fill({
+            name: "example"
+        })
+
+        const wrapper = makeWrapper({
+            columns: [],
+            data,
+            itemsPerPage: 5
+        })
+
+        expect(wrapper.vm.computedData.length).toBe(5)
+
+    })
+
 })
