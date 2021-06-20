@@ -29,22 +29,20 @@
                     </div>
                 </template>
             </Card>
-            <Card class="mb-10">
+            <Card v-if="generation.types.length" class="mb-10">
                 <template #title>
                     <h2 class="text-gray-800 font-semibold text-xl tracking-wide mb-2 float-left">
                         Tipos de mecânicas
                     </h2>
                 </template>
                 <template #content>
-                    <div v-if="generation.types.length">
-                        <div class="types-grid">
-                            <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
-                                <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
-                                    <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
-                                </div>
-                                <div class="mt-12">
-                                    <p class="text-xl font-semibold my-2 text-center">{{ item.name }}</p>
-                                </div>
+                    <div class="types-grid">
+                        <div v-for="(item, i) in generation.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
+                            <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
+                                <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
+                            </div>
+                            <div class="mt-12">
+                                <p class="text-xl font-semibold my-2 text-center">{{ item.name }}</p>
                             </div>
                         </div>
                     </div>
