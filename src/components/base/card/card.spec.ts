@@ -5,7 +5,8 @@ const makeWrapper = (): VueWrapper<any> => {
 
     const wrapper = mount(Card, {
         slots: {
-            title: "Any title"
+            title: "Any title",
+            content: "Any content"
         }
     })
 
@@ -20,6 +21,14 @@ describe('Card base component', () => {
         const wrapper = makeWrapper()
 
         expect(wrapper.html()).toContain("Any title")
+
+    })
+
+    test('Should contain content slot', () => {
+
+        const wrapper = makeWrapper()
+
+        expect(wrapper.html()).toContain("Any content")
 
     })
 
