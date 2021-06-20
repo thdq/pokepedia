@@ -33,11 +33,21 @@ const makeSut = (): SutTypes => {
         axiosStub
     }
 
-
 }
 
-
 describe('RemoteGetGenerations usecase', () => {
+
+    test("Should call axios get with '/generation' URL", async () => {
+
+        const { sut, axiosStub } = makeSut()
+
+        const axiosSpy = jest.spyOn(axiosStub, 'get')
+
+        await sut.getAllGenerations()
+
+        expect(axiosSpy).toHaveBeenCalledWith("/generation")
+
+    })
 
     test('Should not call getDetailsGeneration if axios request throws', async () => {
 

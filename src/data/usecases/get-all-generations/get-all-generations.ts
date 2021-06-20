@@ -20,8 +20,6 @@ export class RemoteGetGenerations implements GetAllGenerations, GetDetailsGenera
 
             const id = gen.url.substring(gen.url.indexOf("n/")+2, gen.url.lastIndexOf("/"))
 
-            console.log(id)
-
             const details = await this.getDetailsGeneration(id)
 
             gen.details = details
