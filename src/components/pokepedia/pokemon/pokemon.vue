@@ -1,19 +1,19 @@
 <template>
-    <div v-if="requestStatus == PromiseStatus.success" class="relative bg-white pt-6 px-6 w-96 my-6 shadow-md rounded-lg">
+    <div v-if="requestStatus == PromiseStatus.success" class="relative bg-white dark:bg-dark-theme pt-6 px-6 w-96 my-6 shadow-md rounded-lg">
         <div :class="`relative bottom-24 left-0 flex items-center place-content-center`">
             <img class="w-56" :src="`https://pokeres.bastionbot.org/images/pokemon/${id}.png`"  />
         </div>
         <div class="relative -top-20">
             <div class="items-center text-center mb-8">
-                <p class="text-lg text-gray-700 uppercase text-center font-semibold"> {{ pokemon?.name }} </p>
+                <p class="text-lg text-gray-700 dark:text-white uppercase text-center font-semibold"> {{ pokemon?.name }} </p>
 
                 <div class="h-2 rounded-full w-full bg-green-400" />
                 <span class="text-sm font-semibold text-gray-500">  {{ pokemon.hp }} HP </span>
             </div>
 
-            <div class="grid grid-cols-3 text-center bg-gray-100 rounded-md py-4">
+            <div class="grid grid-cols-3 text-center bg-gray-100 dark:bg-black rounded-md py-4">
                 <div class="grid grid-rows-1">
-                    <span class="font-semibold text-gray-600"> {{ pokemon.weight }} </span>
+                    <span class="font-semibold text-gray-600 dark:text-white"> {{ pokemon.weight }} </span>
                     <span class="uppercase text-xs tracking-wider text-gray-500"> Weight </span>
                 </div>
                 <div class="flex flex-row gap-2 place-self-center">
@@ -24,11 +24,11 @@
                     </div>
                 </div>
                 <div class="grid grid-rows-1">
-                    <span class="font-semibold text-gray-600"> {{ pokemon.height }} </span>
+                    <span class="font-semibold text-gray-600 dark:text-white"> {{ pokemon.height }} </span>
                     <span class="uppercase text-xs tracking-wider text-gray-500"> Height </span>
                 </div>
             </div>
-            <div class="flex text-sm mt-8">
+            <div class="flex text-sm mt-8 dark:text-white">
                 Ataque
                 <div class="mx-3 shadow w-full bg-blue-100 rounded-md">
                     <div class="bg-blue-500 text-xs leading-none py-1 text-center text-white rounded-md max-w-full" :style="`width: ${pokemon.attack}%`">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex text-sm mt-8">
+            <div class="flex text-sm mt-8 dark:text-white">
                 Velocidade
                 <div class="ml-3 shadow w-full bg-yellow-100 rounded-md">
                     <div class="bg-yellow-500 text-xs leading-none py-1 text-center text-white rounded-md max-w-full" :style="`width: ${pokemon.speed}%`">
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="flex gap-1 text-sm mt-8">
+            <div class="flex gap-1 text-sm mt-8 dark:text-white">
                 Taxa de captura: <span class="font-semibold"> {{ pokemon.catchRate }}% </span>
             </div>
         </div>

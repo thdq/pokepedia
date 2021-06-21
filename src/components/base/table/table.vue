@@ -103,19 +103,19 @@ export default defineComponent({
 }
 
 .pok-table--container {
-    @apply bg-white rounded-sm border-l-2 border-r-2 border-b-2 border-gray-100
+    @apply bg-white dark:bg-dark-theme rounded-sm border-l-2 border-r-2 border-b-2 border-gray-100 dark:border-black
 }
 
 .pok-table--head tr {
-    @apply bg-gray-100 text-gray-600 text-sm leading-normal
+    @apply bg-gray-100 text-gray-600 dark:bg-black text-sm leading-normal dark:text-white
 }
 
 .pok-table--body {
-    @apply text-gray-600 text-sm font-light
+    @apply text-gray-600 text-sm font-light dark:text-white
 }
 
 .pok-table--body tr {
-    @apply border-b border-gray-200 hover:bg-gray-50
+    @apply border-b border-gray-200 dark:border-black hover:bg-gray-50 dark:hover:bg-gray-900
 }
 
 .pok-table--body tr td {
@@ -123,7 +123,7 @@ export default defineComponent({
 }
 
 .pok-table--pagination {
-    @apply border-t-2 border-gray-100
+    @apply border-t-2 border-gray-100 dark:border-black
 }
 
 

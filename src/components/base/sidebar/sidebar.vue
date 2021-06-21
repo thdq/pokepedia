@@ -27,11 +27,12 @@ export default defineComponent({
 
 .pok-sidebar {
     height: 90vh;
-    @apply flex sticky flex-col top-8 left-0 w-64 bg-white border-white border-2 rounded-2xl my-8 ml-6 shadow-md float-left
+    @apply flex sticky flex-col top-8 left-0 w-64 bg-white border-white border-2 rounded-2xl my-8 ml-6 shadow-md float-left;
+    @apply dark:bg-dark-theme dark:border-dark-theme;
 }
 
 .pok-sidebar--title {
-    @apply flex items-center tracking-wide justify-center h-14 text-5xl text-transparent bg-clip-text bg-gradient-to-bl from-secondary to-primary
+    @apply flex items-center tracking-wide justify-center h-14 text-5xl text-transparent bg-clip-text bg-gradient-to-bl from-secondary to-primary;
 }
 
 .pok-sidebar--content {

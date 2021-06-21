@@ -6,7 +6,7 @@
         <div v-else-if="requestStatus === PromiseStatus.success">
             <Card class="mb-10">
                 <template #title>
-                    <h2 class="text-gray-800 font-semibold text-4xl tracking-wide mb-2 float-left">
+                    <h2 class="text-gray-800 dark:text-white font-semibold text-4xl tracking-wide mb-2 float-left">
                         {{ generation?.name }}
                     </h2>
                 </template>
@@ -31,13 +31,13 @@
             </Card>
             <Card v-if="generation?.types?.length" class="mb-10">
                 <template #title>
-                    <h2 class="text-gray-800 font-semibold text-xl tracking-wide mb-2 float-left">
+                    <h2 class="text-gray-800 dark:text-white font-semibold text-xl tracking-wide mb-2 float-left">
                         Tipos de mecânicas
                     </h2>
                 </template>
                 <template #content>
                     <div class="types-grid">
-                        <div v-for="(item, i) in generation?.types" :key="i" class="relative bg-white py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100">
+                        <div v-for="(item, i) in generation?.types" :key="i" class="relative bg-white dark:bg-dark-theme py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100 dark:border-gray-500">
                             <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
                                 <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
                             </div>
@@ -50,7 +50,7 @@
             </Card>
             <Card class="mb-10">
                 <template #title>
-                    <h2 class="text-gray-800 font-semibold text-xl tracking-wide mb-2 float-left">
+                    <h2 class="text-gray-800 dark:text-white font-semibold text-xl tracking-wide mb-2 float-left">
                         Informações gerais
                     </h2>
                 </template>
@@ -66,7 +66,7 @@
             </Card>
             <Card class="mb-10">
                 <template #title>
-                    <h2 class="text-gray-800 font-semibold text-xl tracking-wide mb-2 float-left">
+                    <h2 class="text-gray-800 dark:text-white font-semibold text-xl tracking-wide mb-2 float-left">
                         Versão de jogos
                     </h2>
                 </template>
@@ -74,8 +74,8 @@
                     <div class="versions-grid">
                         <div v-for="(item, i) in generation?.version_groups" :key="i" class="flex flex-col justify-center items-center mx-auto">
                             <img v-image-fallback :src="`src/assets/images/versions/${item.name}.png`" class="bg-gray-300 h-64 w-full rounded-lg bg-cover bg-center"/>
-                            <div class="w-56 md:w-64 bg-white -mt-10 shadow-md rounded-md overflow-hidden">
-                                <div class="py-4 text-center font-bold uppercase tracking-wide text-gray-800">
+                            <div class="w-56 md:w-64 bg-white dark:bg-dark-theme -mt-10 shadow-md rounded-md overflow-hidden">
+                                <div class="py-4 text-center font-bold uppercase tracking-wide text-gray-800 dark:text-white">
                                     {{ item.name }}
                                 </div>
                             </div>

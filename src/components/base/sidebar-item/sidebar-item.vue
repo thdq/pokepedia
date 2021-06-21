@@ -6,7 +6,7 @@
             </div>
         </li>
         <li v-else>
-            <span class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-primary text-gray-600 hover:text-white rounded-md border-transparent hover:border-primary pr-6">
+            <span class="pok-sidebar--item">
                 <slot />
             </span>
         </li>
@@ -36,6 +36,11 @@ export default defineComponent({
 
 .router-link-active .icon {
     @apply border-primary border-2
+}
+
+.pok-sidebar--item {
+    @apply relative flex flex-row items-center h-11 focus:outline-none hover:bg-primary text-gray-600 hover:text-white rounded-md border-transparent hover:border-primary pr-6;
+    @apply dark:text-white;
 }
 
 </style>

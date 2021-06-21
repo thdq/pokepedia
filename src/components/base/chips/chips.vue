@@ -63,7 +63,7 @@ export default defineComponent({
 <style scoped>
 
 .pok-chips {
-    @apply m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-default
+    @apply m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-default dark:text-gray-900 dark:bg-gray-300 dark:hover:bg-gray-400
 }
 
 </style>

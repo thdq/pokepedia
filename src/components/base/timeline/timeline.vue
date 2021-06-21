@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto">
         <div class="relative wrap overflow-hidden">
-            <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border left-2/4"></div>
+            <div class="border-2-2 absolute border-opacity-20 border-gray-700 h-full border left-2/4 dark:border-white"></div>
             <slot />
         </div>
     </div>

@@ -58,7 +58,7 @@ export default defineComponent({
 <style scoped>
 
 .pok-page {
-    @apply flex items-center justify-center w-6 h-6 m-2 text-sm rounded-xl select-none outline-none cursor-pointer box-border hover:bg-gray-200
+    @apply flex items-center justify-center w-6 h-6 m-2 text-sm rounded-xl select-none outline-none cursor-pointer box-border hover:bg-gray-200 dark:hover:bg-gray-800
 }
 
 .active {

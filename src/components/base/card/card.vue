@@ -30,7 +30,7 @@ export default defineComponent({
 <style scoped>
 
 .card {
-    @apply bg-white shadow-md rounded-lg overflow-hidden mx-auto
+    @apply bg-white shadow-md rounded-lg overflow-hidden mx-auto dark:bg-dark-theme dark:text-white
 }
 
 .card-main {

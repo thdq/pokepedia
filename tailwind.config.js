@@ -1,12 +1,13 @@
 module.exports = {
     mode: "jit",
     purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-    darkMode: false, // or 'media' or 'class'
+    darkMode: "class",
     theme: {
         extend: {
             colors: {
                 primary: '#2a75bb',
                 secondary: '#3c5aa6',
+                'dark-theme': "#15181c"
             },
             fontFamily: {
                 'bangers': ['"Bangers"', 'cursive'],

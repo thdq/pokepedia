@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="text-gray-500 font-semibold text-2xl tracking-wide my-4">
-            <span class="text-secondary"># </span> Gerações de games
+            <span class="text-secondary"># </span> <span class="dark:text-gray-300"> Gerações de games </span>
         </h2>
 
         <div v-if="requestStatus <= 1">
@@ -24,11 +24,11 @@
                         <Card class="my-9">
                             <template #title>
                                 <div>
-                                    <h2 class="text-gray-800 font-semibold text-3xl tracking-wide mb-2 float-left">
+                                    <h2 class="text-gray-800 dark:text-white font-semibold text-3xl tracking-wide mb-2 float-left">
                                         {{ item.name }}
                                     </h2>
                                     <span class="float-right text-gray-500 flex mq-max-xl:hidden">
-                                        <LocationMarkerIcon class="w-6 h-6 text-secondary mr-1" /> {{ item.details.main_region.name.toUpperCase() }}
+                                        <LocationMarkerIcon class="w-6 h-6 text-secondary dark:text-white mr-1" /> {{ item.details.main_region.name.toUpperCase() }}
                                     </span>
                                 </div>
                             </template>
@@ -154,7 +154,7 @@ export default defineComponent({
 <style scoped>
 
 .button-details {
-    @apply bg-secondary hover:bg-primary px-5 py-3 text-sm font-medium tracking-wider border text-white rounded-md;
+    @apply bg-secondary hover:bg-primary px-5 py-3 text-sm font-medium tracking-wider border-none text-white rounded-md;
     @apply mq-max-xl:w-full
 }
 

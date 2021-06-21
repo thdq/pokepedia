@@ -12,6 +12,17 @@ export default defineComponent({
     components: {
         Master
     },
+    setup() {
+
+        if (localStorage.theme === 'dark') {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
+        localStorage.theme = 'dark'
+
+    }
 })
 </script>
 
@@ -23,6 +34,10 @@ export default defineComponent({
 
 .pok-main {
     @apply my-8 w-full px-6
+}
+
+body {
+    @apply dark:bg-black
 }
 
 </style>
