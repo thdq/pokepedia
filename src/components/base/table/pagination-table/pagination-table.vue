@@ -43,7 +43,7 @@ export default defineComponent({
     emits: ['update:modelValue'],
     setup(props, { emit }) {
 
-        const pagination = computed((): (number | null)[] => {
+        const pagination = computed((): (any)[] => {
 
             const res = []
             const minPaginationElems = 5 + props.rangeSize * 2

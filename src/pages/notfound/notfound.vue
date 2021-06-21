@@ -6,7 +6,7 @@
                     <div class="title-not-found">
                         <span class="place-self-center text-9xl"> 4 </span>
                         <div class="place-self-center">
-                            <img class="w-20" src="src/assets/images/pokeball-inside.png" />
+                            <img class="w-20" src="/src/assets/images/pokeball-inside.png" />
                         </div>
                         <span class="place-self-center text-9xl"> 4 </span>
                     </div>

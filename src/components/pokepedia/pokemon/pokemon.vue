@@ -73,7 +73,7 @@ export default defineComponent({
     name: "Pokemon",
     props: {
         id: {
-            type: Number,
+            type: [Number, String],
             required: true
         }
     },
@@ -89,7 +89,7 @@ export default defineComponent({
             try {
                 requestStatus.value = PromiseStatus.pending
 
-                allPokemonInfo.value = await new RemoteGetPokedex($axios).getAllPokemonInfo(props.id)
+                allPokemonInfo.value = await new RemoteGetPokedex($axios).getAllPokemonInfo(Number(props.id))
 
             } catch (error) {
                 requestStatus.value = PromiseStatus.error

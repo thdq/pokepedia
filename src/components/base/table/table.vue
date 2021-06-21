@@ -33,8 +33,13 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue'
+import { computed, defineComponent, PropType, ref } from 'vue'
 import Pagination from './pagination-table/pagination-table.vue'
+
+interface ColumnsProps {
+    key: string
+    label: string
+}
 
 export default defineComponent({
     name: "Table",
@@ -48,7 +53,7 @@ export default defineComponent({
             default: () => ([])
         },
         columns: {
-            type: Array,
+            type: Array as PropType<ColumnsProps[]>,
             required: false,
             default: () => ([])
         },
@@ -76,7 +81,7 @@ export default defineComponent({
 
         const currentPage = ref<number>(1)
 
-        const updateContent = (page: number) => {
+        const updateContent = (page: number | undefined): void => {
 
             currentPage.value = page ?? 0
         }
