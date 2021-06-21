@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+import { useHead } from '@vueuse/head'
 import { AxiosStatic } from 'axios'
 import { defineComponent, inject, onMounted, ref } from 'vue'
 import Pokemon from '../../components/pokepedia/pokemon/pokemon.vue'
@@ -20,6 +21,10 @@ export default defineComponent({
     },
     setup () {
         const axios = inject('$axios') as AxiosStatic
+
+        useHead({
+            title: "Pokepedia | Pokedex"
+        })
 
         const pokedex = ref<PokedexModel>()
         const requestStatus = ref<number>(PromiseStatus.notStarted)

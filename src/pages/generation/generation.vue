@@ -97,6 +97,7 @@
 </template>
 
 <script lang="ts">
+import { useHead } from '@vueuse/head'
 import { AxiosStatic } from 'axios'
 import { computed, defineComponent, inject, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
@@ -108,6 +109,10 @@ export default defineComponent({
     setup () {
         const $axios = inject('$axios') as AxiosStatic
         const route = useRoute()
+
+        useHead({
+            title: `Pokepedia | Detalhes da ${route.params.id }ª geração`
+        })
 
         const generation = ref<GenerationDetailsModel>()
         const requestStatus = ref<number>(PromiseStatus.notStarted)

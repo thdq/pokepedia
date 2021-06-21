@@ -88,6 +88,7 @@ import { RemoteGetGenerations } from '../../data/usecases/get-all-generations/ge
 import { PromiseStatus } from '../../helpers/promise-enum'
 import { LocationMarkerIcon } from '@heroicons/vue/outline'
 import { useRouter } from 'vue-router'
+import { useHead } from '@vueuse/head'
 
 export default defineComponent({
     components: {
@@ -96,6 +97,10 @@ export default defineComponent({
     setup () {
         const $axios = inject('$axios') as AxiosStatic
         const router = useRouter()
+
+        useHead({
+            title: "Pokepedia | Gerações de games"
+        })
 
         const generations = ref<GenerationModel>({
             count: 0,
