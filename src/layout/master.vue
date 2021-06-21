@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mq-max-md:hidden">
         <Sidebar>
             <template #title>
                 <router-link to="/">

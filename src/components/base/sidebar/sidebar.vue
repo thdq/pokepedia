@@ -27,7 +27,7 @@ export default defineComponent({
 
 .pok-sidebar {
     height: 90vh;
-    @apply flex sticky flex-col top-8 left-0 w-64 bg-white border-white border-2 rounded-2xl my-8 mx-6 shadow-md float-left
+    @apply flex sticky flex-col top-8 left-0 w-64 bg-white border-white border-2 rounded-2xl my-8 ml-6 shadow-md float-left
 }
 
 .pok-sidebar--title {

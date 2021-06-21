@@ -22,7 +22,7 @@ export default defineComponent({
 }
 
 .pok-main {
-    @apply my-8 w-full pr-6
+    @apply my-8 w-full px-6
 }
 
 </style>
