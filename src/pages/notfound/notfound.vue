@@ -12,10 +12,9 @@
                     </div>
                 </div>
 
-                <div class="w-full m-auto text-center mt-20">
+                <div data-testid="alert-message" class="w-full m-auto text-center mt-20">
                     <span class="text-3xl font-semibold text-gray-800"> Desculpe, não encontramos essa página. </span>
                 </div>
-
             </template>
         </Card>
     </div>
