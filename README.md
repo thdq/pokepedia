@@ -1,27 +1,40 @@
-# Vue 3 + Typescript + Vite
+# Pokepedia
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+Pokepedia é uma aplicação web que contém informações sobre gerações de games e pokedex com informações de pokemons.
 
-## Recommended IDE Setup
+![https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F89ea2841-2f7c-4f4a-b511-1ca2758772ad%2FUntitled.png?table=block&id=3c8c046e-8071-47fb-a378-0adef5fbec3e&spaceId=8c0d1f05-7d40-4d95-9498-8f023ed8a412&width=3810&userId=&cache=v2](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F89ea2841-2f7c-4f4a-b511-1ca2758772ad%2FUntitled.png?table=block&id=3c8c046e-8071-47fb-a378-0adef5fbec3e&spaceId=8c0d1f05-7d40-4d95-9498-8f023ed8a412&width=3810&userId=&cache=v2)
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+### Instalação local
 
-### If Using `<script setup>`
+1. Faça download ou fork do repositório;
+2. Instale as dependências:
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+    ```bash
+    # Usando Yarn
+    yarn install --production # Se deseja instalar as dependências de desevolvimento remova a flag --production
+    yarn dev
 
-## Type Support For `.vue` Imports in TS
+    # Usando NPM
+    npm run install --only-prod # Se deseja instalar as dependências de desevolvimento remova a flag --only-prod
+    npm run dev
+    ```
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+### Demonstração
 
-### If Using Volar
+O site pode ser localizado no link  [https://pokepedia-vue.netlify.app/](https://pokepedia-vue.netlify.app/)
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+### Funcionalidades da versão 1.x.x
 
-### If Using Vetur
+- [x]  Exibir gerações;
+- [x]  Exibir detalhes de uma determinada geração;
+- [x]  Exibir pokedex;
+- [x]  Exibir detalhes de um pokemon.
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+### Implementação para versão 2.x.x
+
+- [ ]  Exibir nome das páginas dinamicamente;
+- [ ]  Criar um favicon;
+- [ ]  Ocultar sidebar para dispositivos móveis;
+- [ ]  Aplicar paginação com efeito infinite-scroll na página do Pokedex;
+- [ ]  Aplicar tema noturno;
+- [ ]  Internacionalização (i18n);
