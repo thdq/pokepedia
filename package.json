@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.1",
+    "@vueuse/head": "^0.6.0",
     "axios": "^0.21.1",
     "vue": "^3.0.5",
     "vue-router": "4"
