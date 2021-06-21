@@ -6,6 +6,9 @@
         <div class="pok-sidebar--content">
             <slot name="content" />
         </div>
+        <div class="pok-sidebar--footer">
+            <slot name="footer" />
+        </div>
     </div>
 </template>
 

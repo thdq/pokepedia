@@ -29,12 +29,27 @@
                     </SidedarItem>
                 </ul>
             </template>
+            <template #footer>
+                <ul class="flex flex-col py-4 space-y-1">
+                    <li class="footer-li">
+                        <label for="toogleButton" class="flex items-center cursor-pointer place-content-center">
+                            <div class="px-2 dark:text-white">Modo noturno</div>
+
+                            <div class="relative">
+                                <input id="toogleButton" type="checkbox" v-model="isChecked" @change="setTheme(isChecked)" class="hidden" />
+                                <div class="toggle-path bg-gray-200 dark:bg-gray-700 w-9 h-5 rounded-full shadow-inner"></div>
+                                <div class="toggle-circle absolute w-3.5 h-3.5 bg-white rounded-full shadow inset-y-0 left-0"></div>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </template>
         </Sidebar>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 import Sidebar from '../components/base/sidebar/sidebar.vue'
 import SidedarItem from '../components/base/sidebar-item/sidebar-item.vue'
 
@@ -44,8 +59,61 @@ export default defineComponent({
         Sidebar,
         SidedarItem
     },
+    setup() {
+
+        const isChecked = ref<boolean>(false)
+
+        onMounted(() => {
+
+            const theme = localStorage.getItem("theme")
+
+            if(theme == 'dark') {
+                isChecked.value = true
+            }
+
+            setTheme(isChecked.value)
+
+
+        })
+
+        const setTheme = (checked: boolean): void => {
+
+            if(checked) {
+                localStorage.setItem("theme", "dark")
+                document.documentElement.classList.add('dark')
+            } else {
+                localStorage.removeItem("theme")
+                document.documentElement.classList.remove('dark')
+            }
+
+        }
+
+        return {
+            setTheme,
+            isChecked
+        }
+
+    }
 })
 </script>
 
-<style>
+<style scoped>
+
+
+.toggle-path {
+    transition: background 0.3s ease-in-out;
+}
+.toggle-circle {
+    top: 0.2rem;
+    left: 0.25rem;
+    transition: all 0.2s ease-in-out;
+}
+input:checked ~ .toggle-circle {
+    transform: translateX(100%);
+}
+input:checked ~ .toggle-path {
+    @apply bg-primary;
+}
+
+
 </style>
