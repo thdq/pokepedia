@@ -21,7 +21,7 @@
                                     <img
                                         v-image-fallback
                                         class="max-w-full max-h-96 rounded-sm"
-                                        :src="`/src/assets/images/regions/${generation?.main_region?.name}.png`"
+                                        :src="`${regions[`/src/assets/images/regions/${generation?.main_region?.name}.png`].default}`"
                                     >
                                 </div>
                             </div>
@@ -39,7 +39,10 @@
                     <div class="types-grid">
                         <div v-for="(item, i) in generation?.types" :key="i" class="relative bg-white dark:bg-dark-theme py-6 px-6 rounded-xl w-40 my-4 shadow-sm border-2 border-gray-100 dark:border-gray-500">
                             <div :class="`bg-custom-${item.name} text-white flex items-center absolute rounded-full py-4 px-4 shadow-sm left-1/4 -top-6`">
-                                <img :src="`src/assets/images/types/${item.name}.svg`" class="w-12" />
+                                <img
+                                    :src="`${types[`/src/assets/images/types/${item?.name}.svg`].default}`"
+                                    class="w-12"
+                                >
                             </div>
                             <div class="mt-12">
                                 <p class="text-xl font-semibold my-2 text-center">{{ item.name }}</p>
@@ -73,7 +76,11 @@
                 <template #content>
                     <div class="versions-grid">
                         <div v-for="(item, i) in generation?.version_groups" :key="i" class="flex flex-col justify-center items-center mx-auto">
-                            <img v-image-fallback :src="`src/assets/images/versions/${item.name}.png`" class="bg-gray-300 h-64 w-full rounded-lg bg-cover bg-center"/>
+                            <img
+                                v-image-fallback
+                                :src="`${versions[`/src/assets/images/versions/${item?.name}.png`].default}`"
+                                class="bg-gray-300 h-64 w-full rounded-lg bg-cover bg-center"
+                            >
                             <div class="w-56 md:w-64 bg-white dark:bg-dark-theme -mt-10 shadow-md rounded-md overflow-hidden">
                                 <div class="py-4 text-center font-bold uppercase tracking-wide text-gray-800 dark:text-white">
                                     {{ item.name }}
@@ -104,6 +111,10 @@ import { useRoute } from 'vue-router'
 import { RemoteGetGenerations } from '../../data/usecases/get-all-generations/get-all-generations'
 import { GenerationDetailsModel } from '../../domain/models/generation-details-model'
 import { PromiseStatus } from '../../helpers/promise-enum'
+
+const regions = import.meta.globEager('/src/assets/images/regions/*.png')
+const types = import.meta.globEager('/src/assets/images/types/*.svg')
+const versions = import.meta.globEager('/src/assets/images/versions/*.png')
 
 export default defineComponent({
     setup () {
@@ -191,7 +202,10 @@ export default defineComponent({
             movesDataTable,
             pokemonsDataTable,
             typeDataTable,
-            abilitiesDataTable
+            abilitiesDataTable,
+            regions,
+            types,
+            versions
         }
     }
 })
