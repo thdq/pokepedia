@@ -35,7 +35,7 @@ O site pode ser localizado no link  [https://pokepedia-vue.netlify.app/](https:/
 - [x]  Exibir nome das páginas dinamicamente;
 - [x]  Criar um favicon;
 - [x]  Ocultar sidebar para dispositivos móveis;
-- [ ]  Aplicar paginação com efeito infinite-scroll na página do Pokedex;
+- [x]  Aplicar paginação com efeito infinite-scroll na página do Pokedex;
 - [x]  Aplicar tema noturno;
-- [ ]  (Bug 🐞) Somente imagens importadas de forma estática estão sendo adicionadas ao bundle;
+- [x]  (Bug 🐞) Somente imagens importadas de forma estática estão sendo adicionadas ao bundle;
 - [ ]  Internacionalização (i18n);
