@@ -58,7 +58,7 @@
         </div>
     </div>
     <div v-else-if="requestStatus == PromiseStatus.pending">
-        <Skeleton class="px-3" type="card" />
+        <Skeleton type="pokemon" />
     </div>
 </template>
 
