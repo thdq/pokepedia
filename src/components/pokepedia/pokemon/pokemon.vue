@@ -14,18 +14,18 @@
             <div class="grid grid-cols-3 text-center bg-gray-100 dark:bg-black rounded-md py-4">
                 <div class="grid grid-rows-1">
                     <span class="font-semibold text-gray-600 dark:text-white"> {{ pokemon.weight }} </span>
-                    <span class="uppercase text-xs tracking-wider text-gray-500"> Weight </span>
+                    <span class="uppercase text-xs tracking-wider text-gray-500"> Peso </span>
                 </div>
                 <div class="flex flex-row gap-2 place-self-center">
                     <div v-for="(item, i) in pokemon.types" :key="i">
                         <div :class="`bg-custom-${item} text-white flex items-center rounded-full py-2 px-2 shadow-sm left-1/4`">
-                            <img :src="`src/assets/images/types/${item}.svg`" class="w-6" />
+                            <img :src="types[`/src/assets/images/types/${item}.svg`].default" class="w-6" />
                         </div>
                     </div>
                 </div>
                 <div class="grid grid-rows-1">
                     <span class="font-semibold text-gray-600 dark:text-white"> {{ pokemon.height }} </span>
-                    <span class="uppercase text-xs tracking-wider text-gray-500"> Height </span>
+                    <span class="uppercase text-xs tracking-wider text-gray-500"> Altura </span>
                 </div>
             </div>
             <div class="flex text-sm mt-8 dark:text-white">
@@ -68,6 +68,8 @@ import { computed, defineComponent, inject, onMounted, ref } from 'vue'
 import { AllPokemonInfo } from '../../../domain/models/all-pokemon-info'
 import { RemoteGetPokedex } from '../../../data/usecases/get-pokedex/get-pokedex'
 import { PromiseStatus } from '../../../helpers/promise-enum'
+
+const types = import.meta.globEager('/src/assets/images/types/*.svg')
 
 export default defineComponent({
     name: "Pokemon",
@@ -153,6 +155,7 @@ export default defineComponent({
 
 
         return {
+            types,
             pokemon,
             requestStatus,
             PromiseStatus
