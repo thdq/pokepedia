@@ -11,7 +11,6 @@
 </template>
 
 <script lang="ts">
-
 import { computed, onActivated, onDeactivated, onMounted, onUnmounted, ref } from 'vue'
 
 export default {
@@ -42,7 +41,7 @@ export default {
             default: null
         }
     },
-    setup(props){
+    setup(props: Readonly<any>){
 
         const scroll = ref<Element>()
 
