@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Thiago\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @vueuse/head
+  C:\Program Files\nodejs\node.exe C:\Users\Thiago\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add node-sass
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Users\Thiago\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\nodejs\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\Thiago\AppData\Roaming\Dashlane\6.1924.0.21110\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\Thiago\AppData\Roaming\Dashlane\6.1924.0.21110\ucrt;C:\Users\Thiago\AppData\Roaming\Dashlane\6.1924.0.21110\bin\Qt;C:\Users\Thiago\AppData\Roaming\Dashlane\6.1924.0.21110\bin\Ssl;C:\Users\Thiago\AppData\Local\Microsoft\WindowsApps;C:\Users\Thiago\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thiago\AppData\Local\Programs\Fiddler;C:\Users\Thiago\AppData\Local\Microsoft\WindowsApps;C:\Users\Thiago\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Users\Thiago\.dotnet\tools;C:\Program Files\West Wind WebSurge;C:\Users\Thiago\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\Thiago\AppData\Local\Programs\Azure Data Studio\bin;C:\Users\Thiago\AppData\Roaming\npm;C:\grails-4.0.10\grails-4.0.10\bin;C:\Gradle\gradle-7.0.2\bin;
+  C:\Users\Thiago\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\dotnet;C:\Users\Thiago\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\nodejs;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Users\Thiago\AppData\Roaming\Dashlane\6.1924.0.21110\bin\Firefox_Extension\{442718d9-475e-452a-b3e1-fb1ee16b8e9f}\components;C:\Users\Thiago\AppData\Roaming\Dashlane\6.1924.0.21110\ucrt;C:\Users\Thiago\AppData\Roaming\Dashlane\6.1924.0.21110\bin\Qt;C:\Users\Thiago\AppData\Roaming\Dashlane\6.1924.0.21110\bin\Ssl;C:\Users\Thiago\AppData\Local\Microsoft\WindowsApps;C:\Users\Thiago\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thiago\AppData\Local\Programs\Fiddler;C:\Users\Thiago\AppData\Local\Microsoft\WindowsApps;C:\Users\Thiago\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Users\Thiago\.dotnet\tools;C:\Program Files\West Wind WebSurge;C:\Users\Thiago\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\Thiago\AppData\Local\Programs\Azure Data Studio\bin;C:\Users\Thiago\AppData\Roaming\npm;C:\grails-4.0.10\grails-4.0.10\bin;C:\Gradle\gradle-7.0.2\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.10
@@ -28,6 +28,7 @@ npm manifest:
     },
     "dependencies": {
       "@heroicons/vue": "^1.0.1",
+      "@vueuse/head": "^0.6.0",
       "axios": "^0.21.1",
       "vue": "^3.0.5",
       "vue-router": "4"
@@ -925,6 +926,11 @@ Lockfile:
     version "2.0.0-rc.7"
     resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.0.0-rc.7.tgz#a6c4b4ac9e81dcdae31507056aabb16417f29138"
     integrity sha512-CeaahWNVUFW+MXY0dvGP655upNVWcbzqpu6qMn4nK/2nU3O9uDuthRXBIle++nXanYkNUCvlC+TQ5fVeKkvl+Q==
+  
+  "@vueuse/head@^0.6.0":
+    version "0.6.0"
+    resolved "https://registry.yarnpkg.com/@vueuse/head/-/head-0.6.0.tgz#5584b1f724327cfce941c42efec9e590f5799329"
+    integrity sha512-fi7ZjkMpEAUtTT6iR5wgL2HkX1+3zbrmbpcwU//RgJIWEr5b42jk8E9yOheaC2dYAAHzelAllVpX0pDmhcTXuw==
   
   abab@^2.0.3, abab@^2.0.5:
     version "2.0.5"
