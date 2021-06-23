@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 html {
-    @apply bg-gray-50 font-poppins
+    @apply font-poppins
 }
 
 .bg-custom-bug {
