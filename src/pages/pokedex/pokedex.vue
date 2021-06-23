@@ -1,10 +1,11 @@
 <template>
     <div v-if="requestStatus == PromiseStatus.success">
         <div class="pokedex-grid" v-if="pokedex?.pokemon_entries?.length">
-            <div v-for="p in pokedex.pokemon_entries" :key="p.entry_number">
+            <div v-for="p in pokedex.pokemon_entries.slice(0, limitEntries)" :key="p.entry_number">
                 <Pokemon :id="p.entry_number" />
             </div>
         </div>
+        <ScrollLoader :loader-method="getPokemonEntries" />
     </div>
     <div v-else-if="requestStatus == PromiseStatus.pending">
         <div class="pokedex-grid--skeleton">
@@ -47,6 +48,15 @@ export default defineComponent({
 
         const pokedex = ref<PokedexModel>()
         const requestStatus = ref<number>(PromiseStatus.notStarted)
+        const limitEntries = ref<number>(20)
+
+        const getPokemonEntries = (): void => {
+
+            if(limitEntries.value <= (pokedex.value?.pokemon_entries?.length?? 0)){
+                limitEntries.value = limitEntries.value + 20
+            }
+
+        }
 
         onMounted(async () => {
 
@@ -67,7 +77,9 @@ export default defineComponent({
         return {
             pokedex,
             requestStatus,
-            PromiseStatus
+            PromiseStatus,
+            limitEntries,
+            getPokemonEntries
         }
     }
 })

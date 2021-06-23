@@ -1,10 +1,12 @@
 <template>
-    <div ref="scroll" class="loader" v-show="!loaderDisable">
-        <slot>
-            <svg viewBox="25 25 50 50" class="loader__svg" :style="size">
-                <circle cx="50" cy="50" r="20" class="loader__circle" :style="color"></circle>
-            </svg>
-        </slot>
+    <div ref="scroll">
+        <div class="loader" v-show="!loaderDisable">
+            <slot>
+                <svg viewBox="25 25 50 50" class="loader__svg" :style="size">
+                    <circle cx="50" cy="50" r="20" class="loader__circle" :style="color"></circle>
+                </svg>
+            </slot>
+        </div>
     </div>
 </template>
 
@@ -67,18 +69,13 @@ export default {
             }, options.value)
         })
 
-        onMounted(() => {
+        onMounted(() => { if(scroll.value) observer.value.observe(scroll.value as Element)})
 
-            console.log(scroll)
-            observer.value.observe(scroll.value as Element)
+        onActivated(() => { if(scroll.value) observer.value.observe(scroll.value as Element)})
 
-        })
+        onUnmounted(() => { if(scroll.value) observer.value.unobserve(scroll.value as Element)})
 
-        onActivated(() => observer.value.observe(scroll.value as Element))
-
-        onUnmounted(() => observer.value.unobserve(scroll.value as Element))
-
-        onDeactivated(() => observer.value.unobserve(scroll.value as Element))
+        onDeactivated(() => { if(scroll.value) observer.value.unobserve(scroll.value as Element)})
 
         return {
             scroll,
