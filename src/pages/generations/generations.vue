@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="text-gray-500 font-semibold text-2xl tracking-wide my-4">
-            <span class="text-secondary"># </span> <span class="dark:text-gray-300"> Gerações de games </span>
+            <span class="text-secondary"># </span> <span class="dark:text-gray-300"> {{ t('pages.generations.title') }} </span>
         </h2>
 
         <div v-if="requestStatus <= 1">
@@ -25,7 +25,7 @@
                             <template #title>
                                 <div>
                                     <h2 class="text-gray-800 dark:text-white font-semibold text-3xl tracking-wide mb-2 float-left">
-                                        {{ item.name }}
+                                        {{ t(`pages.generations.${item.name}`) }}
                                     </h2>
                                     <span class="float-right text-gray-500 flex mq-max-xl:hidden">
                                         <LocationMarkerIcon class="w-6 h-6 text-secondary dark:text-white mr-1" /> {{ item.details.main_region.name.toUpperCase() }}
@@ -36,22 +36,22 @@
                                 <div class="grid grid-rows-1">
                                     <div class="w-full">
                                         <div class="mb-5">
-                                            Habilidades: <span class="font-semibold">
+                                            {{ t('pages.generations.labels.ability') }}: <span class="font-semibold">
                                                 <Chips :limit="3" :items="item.details.abilities" />
                                             </span>
                                         </div>
                                         <div class="mb-5">
-                                            Tipos de movimentos: <span class="font-semibold">
+                                            {{ t('pages.generations.labels.moves') }}: <span class="font-semibold">
                                                 <Chips :limit="3" :items="item.details.moves" />
                                             </span>
                                         </div>
                                         <div class="mb-5">
-                                            Tipos de mecânica: <span class="font-semibold">
+                                            {{ t('pages.generations.labels.types') }}: <span class="font-semibold">
                                                 <Chips :limit="3" :items="item.details.types" />
                                             </span>
                                         </div>
                                         <div class="mb-5">
-                                            Espécies de pokemon: <span class="font-semibold">
+                                            {{ t('pages.generations.labels.pokemon-species') }}: <span class="font-semibold">
                                                 <Chips :limit="3" :items="item.details.pokemon_species" />
                                             </span>
                                         </div>
@@ -60,7 +60,9 @@
                             </template>
                             <template #footer >
                                 <div class="flex flex-row-reverse space-x-4 space-x-reverse w-full">
-                                    <button class="button-details" @click="goToDetailsPage(item.url)">Ver todos os detalhes</button>
+                                    <button class="button-details" @click="goToDetailsPage(item.url)">
+                                        {{ t('pages.generations.labels.buttons.details') }}
+                                    </button>
                                 </div>
                             </template>
                         </Card>
@@ -89,6 +91,7 @@ import { PromiseStatus } from '../../helpers/promise-enum'
 import { LocationMarkerIcon } from '@heroicons/vue/outline'
 import { useRouter } from 'vue-router'
 import { useHead } from '@vueuse/head'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
     components: {
@@ -97,6 +100,7 @@ export default defineComponent({
     setup () {
         const $axios = inject('$axios') as AxiosStatic
         const router = useRouter()
+        const { t } = useI18n()
 
         useHead({
             title: "Pokepedia | Gerações de games"
@@ -145,7 +149,8 @@ export default defineComponent({
             generations,
             requestStatus,
             PromiseStatus,
-            goToDetailsPage
+            goToDetailsPage,
+            t
         }
     }
 })
