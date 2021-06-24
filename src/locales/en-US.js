@@ -62,6 +62,9 @@ export default {
         },
         "pokedex": {
             "error": "An error ocurred to show a Pokedex"
+        },
+        "notfound": {
+            "message": "Sorry, this page was not found."
         }
 
     }

@@ -13,7 +13,7 @@
                 </div>
 
                 <div data-testid="alert-message" class="w-full m-auto text-center mt-20">
-                    <span class="text-3xl font-semibold text-gray-800"> Desculpe, não encontramos essa página. </span>
+                    <span class="text-3xl font-semibold text-gray-800 dark:text-white"> {{ t('pages.notfound.message') }} </span>
                 </div>
             </template>
         </Card>
@@ -23,16 +23,20 @@
 <script lang="ts">
 import { useHead } from '@vueuse/head'
 import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
     setup () {
+        const { t } = useI18n()
 
         useHead({
             title: "Pokepedia | Página não encontrada"
         })
 
 
-        return {}
+        return {
+            t
+        }
     }
 })
 </script>
