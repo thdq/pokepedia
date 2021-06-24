@@ -67,5 +67,17 @@ export default {
             "message": "Sorry, this page was not found."
         }
 
+    },
+    "layout": {
+        "components": {
+            "sidebar-item": {
+                "labels": {
+                    "menu": "Menu",
+                    "generations": "Generations",
+                    "pokedex": "Pokédex",
+                    "dark-mode": "Dark mode"
+                }
+            }
+        }
     }
 }

@@ -9,14 +9,18 @@
             <template #content>
                 <ul class="flex flex-col py-4 space-y-1">
                     <SidedarItem isGroup>
-                        <div class="text-sm font-light tracking-wide text-gray-500">Menu principal</div>
+                        <div class="text-sm font-light tracking-wide text-gray-500">
+                            {{ t('layout.components.sidebar-item.labels.menu') }}
+                        </div>
                     </SidedarItem>
                     <SidedarItem>
                         <router-link class="w-full flex items-center" to="/generations">
                             <span class="icon inline-flex justify-center items-center ml-4 bg-white rounded-full p-1">
                                 <img src="../assets/images/iconfinder.svg" class="w-5 h-5" />
                             </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Gerações</span>
+                            <span class="ml-2 text-sm tracking-wide truncate">
+                                {{ t('layout.components.sidebar-item.labels.generations') }}
+                            </span>
                         </router-link>
                     </SidedarItem>
                     <SidedarItem>
@@ -24,7 +28,9 @@
                             <span class="icon inline-flex justify-center items-center ml-4 bg-white rounded-full p-1">
                                 <img src="../assets/images/pokedex.svg" class="w-5 h-5" />
                             </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Pokédex</span>
+                            <span class="ml-2 text-sm tracking-wide truncate">
+                                {{ t('layout.components.sidebar-item.labels.pokedex') }}
+                            </span>
                         </router-link>
                     </SidedarItem>
                 </ul>
@@ -33,7 +39,9 @@
                 <ul class="flex flex-col py-4 space-y-1">
                     <li class="footer-li">
                         <label for="toogleButton" class="flex items-center cursor-pointer place-content-center">
-                            <div class="px-2 dark:text-white">Modo noturno</div>
+                            <div class="px-2 dark:text-white">
+                                {{ t('layout.components.sidebar-item.labels.dark-mode') }}
+                            </div>
 
                             <div class="relative">
                                 <input id="toogleButton" type="checkbox" v-model="isChecked" @change="setTheme(isChecked)" class="hidden" />
@@ -52,6 +60,7 @@
 import { defineComponent, onMounted, ref } from 'vue'
 import Sidebar from '../components/base/sidebar/sidebar.vue'
 import SidedarItem from '../components/base/sidebar-item/sidebar-item.vue'
+import { useI18n } from 'vue-i18n'
 
 export default defineComponent({
     name: 'Master',
@@ -60,7 +69,7 @@ export default defineComponent({
         SidedarItem
     },
     setup() {
-
+        const { t } = useI18n()
         const isChecked = ref<boolean>(false)
 
         onMounted(() => {
@@ -90,7 +99,8 @@ export default defineComponent({
 
         return {
             setTheme,
-            isChecked
+            isChecked,
+            t
         }
 
     }
