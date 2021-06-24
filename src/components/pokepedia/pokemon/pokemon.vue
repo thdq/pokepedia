@@ -14,7 +14,7 @@
             <div class="grid grid-cols-3 text-center bg-gray-100 dark:bg-black rounded-md py-4">
                 <div class="grid grid-rows-1">
                     <span class="font-semibold text-gray-600 dark:text-white"> {{ pokemon.weight }} </span>
-                    <span class="uppercase text-xs tracking-wider text-gray-500"> Peso </span>
+                    <span class="uppercase text-xs tracking-wider text-gray-500"> {{ t('components.pokemon.labels.weight') }} </span>
                 </div>
                 <div class="flex flex-row gap-2 place-self-center">
                     <div v-for="(item, i) in pokemon.types" :key="i">
@@ -25,18 +25,18 @@
                 </div>
                 <div class="grid grid-rows-1">
                     <span class="font-semibold text-gray-600 dark:text-white"> {{ pokemon.height }} </span>
-                    <span class="uppercase text-xs tracking-wider text-gray-500"> Altura </span>
+                    <span class="uppercase text-xs tracking-wider text-gray-500"> {{ t('components.pokemon.labels.height') }} </span>
                 </div>
             </div>
             <div class="flex text-sm mt-8 dark:text-white">
-                Ataque
+                {{ t('components.pokemon.labels.attack') }}
                 <div class="mx-3 shadow w-full bg-blue-100 rounded-md">
                     <div class="bg-blue-500 text-xs leading-none py-1 text-center text-white rounded-md max-w-full" :style="`width: ${pokemon.attack}%`">
                         {{ pokemon.attack }}
                     </div>
                 </div>
 
-                Defesa
+                {{ t('components.pokemon.labels.defense') }}
                 <div class="ml-3 shadow w-full bg-red-100 rounded-md">
                     <div class="bg-red-500 text-xs leading-none py-1 text-center text-white rounded-md max-w-full" :style="`width: ${pokemon.defense}%`">
                         {{ pokemon.defense }}
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="flex text-sm mt-8 dark:text-white">
-                Velocidade
+                {{ t('components.pokemon.labels.speed') }}
                 <div class="ml-3 shadow w-full bg-yellow-100 rounded-md">
                     <div class="bg-yellow-500 text-xs leading-none py-1 text-center text-white rounded-md max-w-full" :style="`width: ${pokemon.speed}%`">
                         {{ pokemon.speed }}
@@ -53,7 +53,7 @@
             </div>
 
             <div class="flex gap-1 text-sm mt-8 dark:text-white">
-                Taxa de captura: <span class="font-semibold"> {{ pokemon.catchRate }}% </span>
+                {{ t('components.pokemon.labels.catch-rate') }}: <span class="font-semibold"> {{ pokemon.catchRate }}% </span>
             </div>
         </div>
     </div>
@@ -68,6 +68,7 @@ import { computed, defineComponent, inject, onMounted, ref } from 'vue'
 import { AllPokemonInfo } from '../../../domain/models/all-pokemon-info'
 import { RemoteGetPokedex } from '../../../data/usecases/get-pokedex/get-pokedex'
 import { PromiseStatus } from '../../../helpers/promise-enum'
+import { useI18n } from 'vue-i18n'
 
 const types = import.meta.globEager('/src/assets/images/types/*.svg')
 
@@ -80,7 +81,7 @@ export default defineComponent({
         }
     },
     setup (props) {
-
+        const { t } = useI18n()
         const $axios = inject('$axios') as AxiosStatic
         const allPokemonInfo = ref<AllPokemonInfo>()
 
@@ -158,7 +159,8 @@ export default defineComponent({
             types,
             pokemon,
             requestStatus,
-            PromiseStatus
+            PromiseStatus,
+            t
         }
     }
 })

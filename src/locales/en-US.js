@@ -79,5 +79,17 @@ export default {
                 }
             }
         }
+    },
+    "components": {
+        "pokemon": {
+            "labels": {
+                "weight": "Weight",
+                "height": "Height",
+                "attack": "Attack",
+                "defense": "Defense",
+                "speed": "Speed",
+                "catch-rate": "Catch rate"
+            }
+        }
     }
 }
