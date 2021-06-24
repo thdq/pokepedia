@@ -59,6 +59,9 @@ export default {
                     }
                 }
             }
+        },
+        "pokedex": {
+            "error": "An error ocurred to show a Pokedex"
         }
 
     }

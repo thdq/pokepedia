@@ -19,7 +19,7 @@
         <Card >
             <template #content>
                 <div class="text-sm mb-10 text-left text-red-600 py-8 bg-red-200 border border-red-400 h-12 flex items-center p-4 rounded-lg" role="alert">
-                    Ocorreu um erro ao exibir o Pokedex.
+                    {{ t('pages.pokedex.error') }}
                 </div>
             </template>
         </Card>
@@ -30,6 +30,7 @@
 import { useHead } from '@vueuse/head'
 import { AxiosStatic } from 'axios'
 import { defineComponent, inject, onMounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import Pokemon from '../../components/pokepedia/pokemon/pokemon.vue'
 import { RemoteGetPokedex } from '../../data/usecases/get-pokedex/get-pokedex'
 import { PokedexModel } from '../../domain/models/pokedex-model'
@@ -41,6 +42,7 @@ export default defineComponent({
     },
     setup () {
         const axios = inject('$axios') as AxiosStatic
+        const { t } = useI18n()
 
         useHead({
             title: "Pokepedia | Pokedex"
@@ -79,7 +81,8 @@ export default defineComponent({
             requestStatus,
             PromiseStatus,
             limitEntries,
-            getPokemonEntries
+            getPokemonEntries,
+            t
         }
     }
 })
