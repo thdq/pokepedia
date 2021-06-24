@@ -7,14 +7,14 @@
             <Card class="mb-10">
                 <template #title>
                     <h2 class="text-gray-800 dark:text-white font-semibold text-4xl tracking-wide mb-2 float-left">
-                        {{ generation?.name }}
+                        {{ t(`pages.generation.${generation?.name}`) }}
                     </h2>
                 </template>
                 <template #content>
                     <div class="grid grid-rows-1">
                         <div class="w-full">
                             <div class="mb-7">
-                                Região principal: <span class="font-semibold">
+                                {{ t('pages.generation.labels.region') }}: <span class="font-semibold">
                                     {{ generation?.main_region?.name }}
                                 </span>
                                 <div class="mt-5">
@@ -32,7 +32,7 @@
             <Card v-if="generation?.types?.length" class="mb-10">
                 <template #title>
                     <h2 class="text-gray-800 dark:text-white font-semibold text-xl tracking-wide mb-2 float-left">
-                        Tipos de mecânicas
+                        {{ t('pages.generation.labels.types') }}
                     </h2>
                 </template>
                 <template #content>
@@ -54,7 +54,7 @@
             <Card class="mb-10">
                 <template #title>
                     <h2 class="text-gray-800 dark:text-white font-semibold text-xl tracking-wide mb-2 float-left">
-                        Informações gerais
+                        {{ t('pages.generation.labels.general-info') }}
                     </h2>
                 </template>
                 <template #content>
@@ -62,7 +62,7 @@
                         <Table v-if="movesDataTable?.data?.length" :itemsPerPage="10" :data="movesDataTable.data" :columns="movesDataTable.columns" />
                         <Table v-if="pokemonsDataTable?.data?.length" :itemsPerPage="10" :data="pokemonsDataTable.data" :columns="pokemonsDataTable.columns" />
                     </div>
-                    <div v-if="abilitiesDataTable?.data?.length" class="grid grid-rows-1 capitalize border-b-2 py-7 border-gray-100">
+                    <div v-if="abilitiesDataTable?.data?.length" class="grid grid-rows-1 capitalize py-7 border-gray-100">
                         <Table :itemsPerPage="10" :data="abilitiesDataTable.data" :columns="abilitiesDataTable.columns" />
                     </div>
                 </template>
@@ -70,7 +70,7 @@
             <Card class="mb-10">
                 <template #title>
                     <h2 class="text-gray-800 dark:text-white font-semibold text-xl tracking-wide mb-2 float-left">
-                        Versão de jogos
+                        {{ t('pages.generation.labels.versions') }}
                     </h2>
                 </template>
                 <template #content>
@@ -95,7 +95,7 @@
             <Card >
                 <template #content>
                     <div class="text-sm mb-10 text-left text-red-600 py-8 bg-red-200 border border-red-400 h-12 flex items-center p-4 rounded-lg" role="alert">
-                        Ocorreu um erro ao exibir detalhes da geração.
+                        {{ t('pages.generation.labels.error') }}
                     </div>
                 </template>
             </Card>
@@ -107,6 +107,7 @@
 import { useHead } from '@vueuse/head'
 import { AxiosStatic } from 'axios'
 import { computed, defineComponent, inject, onMounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { RemoteGetGenerations } from '../../data/usecases/get-all-generations/get-all-generations'
 import { GenerationDetailsModel } from '../../domain/models/generation-details-model'
@@ -120,6 +121,7 @@ export default defineComponent({
     setup () {
         const $axios = inject('$axios') as AxiosStatic
         const route = useRoute()
+        const { t } = useI18n()
 
         useHead({
             title: `Pokepedia | Detalhes da ${route.params.id }ª geração`
@@ -152,7 +154,7 @@ export default defineComponent({
 
             const columns = [{
                 key: "name",
-                label: "Movimentos"
+                label: t('pages.generation.tables.moves.columns.moves')
             }]
 
             return { data, columns }
@@ -164,7 +166,7 @@ export default defineComponent({
 
             const columns = [{
                 key: "name",
-                label: "Espécie de pokemons"
+                label: t('pages.generation.tables.pokemon-species.columns.pokemon-species')
             }]
 
             return { data, columns }
@@ -176,7 +178,7 @@ export default defineComponent({
 
             const columns = [{
                 key: "name",
-                label: "Tipos de mecânicas"
+                label: t('pages.generation.tables.types.columns.types')
             }]
 
             return { data, columns }
@@ -188,7 +190,7 @@ export default defineComponent({
 
             const columns = [{
                 key: "name",
-                label: "Habilidades"
+                label: t('pages.generation.tables.abilities.columns.abilities')
             }]
 
             return { data, columns }
@@ -205,7 +207,8 @@ export default defineComponent({
             abilitiesDataTable,
             regions,
             types,
-            versions
+            versions,
+            t
         }
     }
 })
