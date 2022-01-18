@@ -1,7 +1,12 @@
 <template>
     <div v-if="requestStatus == PromiseStatus.success" class="relative bg-white dark:bg-dark-theme pt-6 px-6 w-96 my-6 shadow-md rounded-lg">
         <div :class="`relative bottom-24 left-0 flex items-center place-content-center`">
-            <img class="w-56" :src="`https://pokeres.bastionbot.org/images/pokemon/${id}.png`"  />
+            <img 
+                loading="lazy" 
+                class="w-56" 
+                :src="`${externalSvgService}/${id}.svg`"
+                :alt="`Pokemon id ${id}`"
+            >
         </div>
         <div class="relative -top-20">
             <div class="items-center text-center mb-8">
@@ -84,6 +89,7 @@ export default defineComponent({
         const { t } = useI18n()
         const $axios = inject('$axios') as AxiosStatic
         const allPokemonInfo = ref<AllPokemonInfo>()
+        const externalSvgService = 'https://raw.githubusercontent.com/jnovack/pokemon-svg/3c3ea26da58331d7202e7cdb1aab9b8347d8587f/svg';
 
         const requestStatus = ref<number>(PromiseStatus.notStarted)
 
@@ -160,7 +166,8 @@ export default defineComponent({
             pokemon,
             requestStatus,
             PromiseStatus,
-            t
+            t,
+            externalSvgService
         }
     }
 })
