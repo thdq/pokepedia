@@ -3,7 +3,7 @@
         <div :class="`relative bottom-24 left-0 flex items-center place-content-center`">
             <img 
                 loading="lazy" 
-                class="w-56" 
+                class="w-56 h-56" 
                 :src="`${externalSvgService}/${id}.svg`"
                 :alt="`Pokemon id ${id}`"
             >
