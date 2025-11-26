@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/thdq/pokepedia/compare/v2.5.0...v2.6.0) (2025-11-26)
+
+
+### Features
+
+* change 6 ([#16](https://github.com/thdq/pokepedia/issues/16)) ([74b2c73](https://github.com/thdq/pokepedia/commit/74b2c73d90187db4dcddc7b9b0cf21d736663b5b))
+
 # [2.4.0](https://github.com/thdq/pokepedia/compare/v2.3.0...v2.4.0) (2025-11-26)
 
 
