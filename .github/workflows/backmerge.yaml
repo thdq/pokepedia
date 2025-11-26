@@ -28,4 +28,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx semantic-release --extends ./.releaserc.backmerge.json
+          npx semantic-release --extends ./.releaserc.master.json
