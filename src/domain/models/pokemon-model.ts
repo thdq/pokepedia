@@ -66,4 +66,5 @@ export type PokemonModel = {
     stats: Stats[]
     types: Types[]
     weight: number
+    trained: boolean;
 }
