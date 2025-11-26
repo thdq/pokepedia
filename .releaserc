@@ -24,18 +24,6 @@
                 ]
             }
         ],
-        "@semantic-release/github",
-        [
-            "@kilianpaquier/semantic-release-backmerge",
-            {
-                "commit": "chore(release): merge branch ${ from } into ${ to } [skip ci]",
-                "targets": [
-                    {
-                        "from": "master",
-                        "to": "development"
-                    }
-                ]
-            }
-        ]
+        "@semantic-release/github"
     ]
 }
