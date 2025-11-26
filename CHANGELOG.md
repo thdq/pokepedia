@@ -1,3 +1,18 @@
+# [2.5.0](https://github.com/thdq/pokepedia/compare/v2.4.0...v2.5.0) (2025-11-26)
+
+
+### Bug Fixes
+
+* remove unnecessary blank line in generations.vue ([#20](https://github.com/thdq/pokepedia/issues/20)) ([4335f95](https://github.com/thdq/pokepedia/commit/4335f9539dc81672e57340a404f5535819f1c638))
+* update backmerge workflow to use workflow_call trigger ([e7173fe](https://github.com/thdq/pokepedia/commit/e7173fe056248b43c01f0aa1d329292af369a1f8))
+* update semantic-release command to use master configuration ([715204a](https://github.com/thdq/pokepedia/commit/715204a0fb70dde65bcddf77d89f5e72ada76f0e))
+
+
+### Features
+
+* change 6 ([#16](https://github.com/thdq/pokepedia/issues/16)) ([74b2c73](https://github.com/thdq/pokepedia/commit/74b2c73d90187db4dcddc7b9b0cf21d736663b5b))
+* remove obsolete semantic-release configuration files ([1cae1bc](https://github.com/thdq/pokepedia/commit/1cae1bca1ae9af347acae7221d770b8c61732dbf))
+
 # [2.6.0](https://github.com/thdq/pokepedia/compare/v2.5.0...v2.6.0) (2025-11-26)
 
 
