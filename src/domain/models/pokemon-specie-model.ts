@@ -4,7 +4,8 @@ interface GenericModel {
 }
 
 interface EvolutionChain {
-    url: string
+    url: string;
+    chain: any;
 }
 
 interface FlavorTextEntires {
@@ -23,7 +24,7 @@ interface Names {
     name: string
 }
 
-interface PalParkEncounters {
+type PalParkEncounters = {
     area: GenericModel
     base_score: number
     rate: number
