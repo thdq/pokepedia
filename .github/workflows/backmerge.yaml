@@ -1,6 +1,6 @@
 name: Backmerge Pipeline
 on:
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
   main:
