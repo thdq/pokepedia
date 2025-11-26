@@ -29,17 +29,17 @@ interface PalParkEncounters {
     rate: number
 }
 
-interface PokedexNumbers {
+type PokedexNumbers = {
     entry_number: number
     pokedex: GenericModel
 }
 
-interface Varietes {
+type Varietes = {
     is_default: boolean
     pokemon: GenericModel
 }
 
-export interface PokemonSpecieModel {
+export type PokemonSpecieModel = {
     base_happiness: number
     capture_rate: number
     color: GenericModel
