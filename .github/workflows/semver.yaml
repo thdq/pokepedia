@@ -8,14 +8,13 @@ jobs:
   main:
     runs-on: ubuntu-latest
     env:
-      GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GIT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Cache npm dependencies
         uses: actions/cache@v4
         with:
