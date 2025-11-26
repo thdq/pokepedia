@@ -3,7 +3,7 @@ interface GenericModel {
     url: string
 }
 
-interface EvolutionChain {
+type EvolutionChain = {
     url: string;
     chain: any;
 }
