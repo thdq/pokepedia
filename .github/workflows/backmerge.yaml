@@ -28,4 +28,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx semantic-release --branches master --plugins ["@kilianpaquier/semantic-release-backmerge", { "commit": "chore(release): merge branch \${ from } into \${ to } [skip ci]", "targets": [ { "from": "master", "to": "development" } ] }]
+          npx semantic-release --extends ./.releaserc.backmerge.json
