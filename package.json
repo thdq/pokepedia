@@ -1,5 +1,5 @@
 {
-  "version": "2.2.0",
+  "version": "2.3.0",
   "name": "pokepedia-vue",
   "scripts": {
     "test": "jest --passWithNoTests",
@@ -18,7 +18,9 @@
   },
   "devDependencies": {
     "@kilianpaquier/semantic-release-backmerge": "^1.6.20",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/git": "^10.0.1",
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
