@@ -3,7 +3,7 @@
     [
       "@kilianpaquier/semantic-release-backmerge",
       {
-        "commit": "chore(release): merge branch ${from} into ${to}",
+        "commit": "chore(release): merge branch ${from} into ${to} [skip ci]",
         "targets": [
           {
             "from": "master",
