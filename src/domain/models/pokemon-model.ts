@@ -68,4 +68,5 @@ export type PokemonModel = {
     weight: number
     trained: boolean;
     favorite: boolean;
+    trainedAt: Date;
 }
