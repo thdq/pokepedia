@@ -36,7 +36,6 @@
                     }
                 ]
             }
-        ],
-        "@semantic-release/exec"
+        ]
     ]
 }
