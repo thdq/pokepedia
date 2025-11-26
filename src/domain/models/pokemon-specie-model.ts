@@ -14,7 +14,7 @@ interface FlavorTextEntires {
     version: GenericModel
 }
 
-interface Genera {
+type Genera = {
     genus: string
     language: GenericModel
 }
