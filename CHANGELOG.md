@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/thdq/pokepedia/compare/v2.1.0...v2.2.0) (2025-11-26)
+
+
+### Features
+
+* update CHANGELOG.md with change 5 ([7a01fbe](https://github.com/thdq/pokepedia/commit/7a01fbedcd19da38b8b32812a3047788d9e29166))
+
 # [2.1.0](https://github.com/thdq/pokepedia/compare/v2.0.0...v2.1.0) (2025-11-26)
 
 
