@@ -67,4 +67,5 @@ export type PokemonModel = {
     types: Types[]
     weight: number
     trained: boolean;
+    favorite: boolean;
 }
