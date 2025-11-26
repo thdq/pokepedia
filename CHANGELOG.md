@@ -1,3 +1,16 @@
+# [2.4.0](https://github.com/thdq/pokepedia/compare/v2.3.0...v2.4.0) (2025-11-26)
+
+
+### Bug Fixes
+
+* escape variables in semantic-release backmerge command ([fdeb17e](https://github.com/thdq/pokepedia/commit/fdeb17e4562885a6f2ec9eb3679a7e312580114a))
+
+
+### Features
+
+* remove semantic version pipeline workflow ([f4275e1](https://github.com/thdq/pokepedia/commit/f4275e1bfb309dd27d5cb28d03d8f26e4629460b))
+* update semantic-release command to use configuration file ([131316e](https://github.com/thdq/pokepedia/commit/131316edf336cf6f944b3f745e1cc2b52d8ad730))
+
 # [2.3.0](https://github.com/thdq/pokepedia/compare/v2.2.0...v2.3.0) (2025-11-26)
 
 
