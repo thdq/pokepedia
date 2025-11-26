@@ -27,4 +27,4 @@ jobs:
       - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --branches development
+        run: npx semantic-release --extends ./.releaserc.development.json
