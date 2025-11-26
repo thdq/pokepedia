@@ -3,7 +3,6 @@
         <h2 class="text-gray-500 font-semibold text-2xl tracking-wide my-4">
             <span class="text-secondary"># </span> <span class="dark:text-gray-300"> {{ t('pages.generations.title') }} </span>
         </h2>
-
         <div v-if="requestStatus <= 1">
             <Timeline>
                 <TimelineItem position="left">
