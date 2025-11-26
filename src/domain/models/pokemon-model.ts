@@ -66,4 +66,7 @@ export interface PokemonModel {
     stats: Stats[]
     types: Types[]
     weight: number
+    trained: boolean;
+    favorite: boolean;
+    trainedAt: Date;
 }
