@@ -4,7 +4,8 @@ interface GenericModel {
 }
 
 interface EvolutionChain {
-    url: string
+    url: string;
+    chain: any;
 }
 
 interface FlavorTextEntires {
