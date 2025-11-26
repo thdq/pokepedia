@@ -1,3 +1,10 @@
+## [2.5.1](https://github.com/thdq/pokepedia/compare/v2.5.0...v2.5.1) (2025-11-26)
+
+
+### Bug Fixes
+
+* update backmerge workflow trigger to workflow_dispatch ([64d804e](https://github.com/thdq/pokepedia/commit/64d804e89024e9a81f2a34af2cddaafa437c9346))
+
 # [2.5.0](https://github.com/thdq/pokepedia/compare/v2.4.0...v2.5.0) (2025-11-26)
 
 
