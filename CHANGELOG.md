@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/thdq/pokepedia/compare/v2.5.1...v2.6.0) (2025-11-26)
+
+
+### Features
+
+* **release:** update release commit message format to include [semantic-release] ([db5b714](https://github.com/thdq/pokepedia/commit/db5b71462b3f01498d0f135056cb5b7a0b35dc15))
+
 ## [2.5.1](https://github.com/thdq/pokepedia/compare/v2.5.0...v2.5.1) (2025-11-26)
 
 
