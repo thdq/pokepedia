@@ -39,7 +39,7 @@ interface Varietes {
     pokemon: GenericModel
 }
 
-export interface PokemonSpecieModel {
+export type PokemonSpecieModel = {
     base_happiness: number
     capture_rate: number
     color: GenericModel
