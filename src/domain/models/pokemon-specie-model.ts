@@ -29,7 +29,7 @@ interface PalParkEncounters {
     rate: number
 }
 
-interface PokedexNumbers {
+type PokedexNumbers = {
     entry_number: number
     pokedex: GenericModel
 }
