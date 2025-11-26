@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/thdq/pokepedia/compare/v2.6.0...v2.6.1) (2025-11-26)
+
+
+### Bug Fixes
+
+* update release commit message format to remove notes ([d98f3db](https://github.com/thdq/pokepedia/commit/d98f3dbc237a05e9e03aa127c86ae71369cf74e3))
+
 # [2.6.0](https://github.com/thdq/pokepedia/compare/v2.5.1...v2.6.0) (2025-11-26)
 
 
