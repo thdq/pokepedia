@@ -1,5 +1,6 @@
 {
   "version": "0.0.0",
+  "name": "pokepedia-vue",
   "scripts": {
     "test": "jest --passWithNoTests",
     "test:ci": "yarn test --coverage",
