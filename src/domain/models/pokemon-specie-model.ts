@@ -34,7 +34,7 @@ interface PokedexNumbers {
     pokedex: GenericModel
 }
 
-interface Varietes {
+type Varietes = {
     is_default: boolean
     pokemon: GenericModel
 }
