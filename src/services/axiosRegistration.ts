@@ -6,7 +6,6 @@ const instance = axios.create({
 })
 
 export default (app: App): void => {
-
     app.provide('$axios', instance);
 }
 
