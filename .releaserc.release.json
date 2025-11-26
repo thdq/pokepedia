@@ -1,6 +1,6 @@
 {
     "branches": [
-        "development"
+        "master"
     ],
     "plugins": [
         "@semantic-release/commit-analyzer",
@@ -24,7 +24,8 @@
                     "CHANGELOG.md",
                     "package.json",
                     "package-lock.json"
-                ]
+                ],
+                "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
             }
         ],
         "@semantic-release/github"

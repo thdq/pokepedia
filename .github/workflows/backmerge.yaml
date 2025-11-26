@@ -7,6 +7,7 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
+    if: github.event.head_commit.author.name == 'semantic-release-bot'
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -28,4 +29,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx semantic-release --extends ./.releaserc.master.json
+          npx semantic-release --extends ./.releaserc.backmerge.json
