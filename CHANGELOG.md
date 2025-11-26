@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/thdq/pokepedia/compare/v2.2.0...v2.3.0) (2025-11-26)
+
+
+### Features
+
+* update .releaserc and GitHub Actions workflow to include additional semantic release plugins ([b377007](https://github.com/thdq/pokepedia/commit/b3770070d4e6a72690ee38570a87c046e6060c05))
+
 # [2.2.0](https://github.com/thdq/pokepedia/compare/v2.1.0...v2.2.0) (2025-11-26)
 
 

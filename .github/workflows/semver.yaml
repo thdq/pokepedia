@@ -23,6 +23,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install backmerge npm package
-        run: npm install @kilianpaquier/semantic-release-backmerge@1.6.20 @semantic-release/exec@7.1.0 -D
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
+        run: npm install @kilianpaquier/semantic-release-backmerge@1.6.20 @semantic-release/exec@7.1.0 @semantic-release/changelog@6.0.3 @semantic-release/git@10.0.1 -D
+      - name: Run Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release --branches master
