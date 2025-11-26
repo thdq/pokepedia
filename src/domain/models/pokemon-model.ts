@@ -47,7 +47,7 @@ interface Types {
     type: GenericModel
 }
 
-export interface PokemonModel {
+export type PokemonModel = {
     abilities: Abilities[]
     base_experience: number
     forms: GenericModel[]
