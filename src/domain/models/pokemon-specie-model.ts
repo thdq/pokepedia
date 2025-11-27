@@ -8,7 +8,7 @@ interface EvolutionChain {
     chain: any;
 }
 
-interface FlavorTextEntires {
+type FlavorTextEntires = {
     flavor_text: string
     language: GenericModel
     version: GenericModel
