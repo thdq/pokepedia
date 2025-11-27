@@ -27,6 +27,14 @@ jobs:
         run: |
           git fetch origin
           git checkout development
-          # Try fast-forward first, fall back to merge if needed
-          git merge origin/master --ff -m "chore(release): merge branch master into development [skip ci]" || true
+
+          # Check if development already contains all commits from master
+          if git merge-base --is-ancestor origin/master HEAD; then
+            echo "✓ Development is already up-to-date with master. No merge needed."
+            exit 0
+          fi
+
+          # Merge master into development
+          git merge origin/master --ff -m "chore(release): merge branch master into development [skip ci]"
           git push origin development
+          echo "✓ Successfully merged master into development"
