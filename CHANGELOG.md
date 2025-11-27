@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/thdq/pokepedia/compare/v2.10.0...v2.11.0) (2025-11-27)
+
+
+### Features
+
+* update backmerge workflow to merge master into development using devmasx/merge-branch action ([8d4581b](https://github.com/thdq/pokepedia/commit/8d4581bb8eb466a37dcbc0429b83a7c456f4c799))
+
 # [2.10.0](https://github.com/thdq/pokepedia/compare/v2.9.0...v2.10.0) (2025-11-27)
 
 
