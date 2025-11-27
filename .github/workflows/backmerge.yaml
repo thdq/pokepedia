@@ -12,11 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.workflow_run.conclusion == 'success'
     steps:
-      - name: Merge master into development
-        uses: devmasx/merge-branch@master
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          type: now
-          from_branch: master
-          target_branch: development
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: 'chore(release): merge branch master into development [skip ci]'
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Backmerge master to development
+        run: |
+          git fetch origin
+          git checkout development
+          # Try fast-forward first, fall back to merge if needed
+          git merge origin/master --ff -m "chore(release): merge branch master into development [skip ci]" || true
+          git push origin development
