@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/thdq/pokepedia/compare/v2.11.0...v2.12.0) (2025-11-27)
+
+
+### Features
+
+* add branch name check ([bbf0f3b](https://github.com/thdq/pokepedia/commit/bbf0f3b800b50fd87a9acaeb2c951c05edf086e8))
+
 # [2.11.0](https://github.com/thdq/pokepedia/compare/v2.10.0...v2.11.0) (2025-11-27)
 
 
