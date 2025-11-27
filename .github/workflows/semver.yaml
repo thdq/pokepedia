@@ -8,6 +8,10 @@ jobs:
   main:
     runs-on: ubuntu-latest
     if: github.event.head_commit.author.name != 'semantic-release-bot'
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
