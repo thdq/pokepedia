@@ -1,3 +1,10 @@
+## [2.13.1](https://github.com/thdq/pokepedia/compare/v2.13.0...v2.13.1) (2025-11-27)
+
+
+### Bug Fixes
+
+* enhance backmerge workflow to check if development is up-to-date with master before merging ([fd717e0](https://github.com/thdq/pokepedia/commit/fd717e04b8151e707ec6b8e35c8afaeb93c132e6))
+
 # [2.13.0](https://github.com/thdq/pokepedia/compare/v2.12.0...v2.13.0) (2025-11-27)
 
 
