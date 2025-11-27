@@ -1,32 +1,22 @@
 name: Backmerge Pipeline
 on:
-  push:
+  workflow_run:
+    workflows: ["Semantic version Pipeline"]
+    types:
+      - completed
     branches:
       - master
 
 jobs:
   main:
     runs-on: ubuntu-latest
-    if: github.event.head_commit.author.name == 'semantic-release-bot'
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    if: github.event.workflow_run.conclusion == 'success'
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Merge master into development
+        uses: devmasx/merge-branch@master
         with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Cache npm dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Install semantic release npm package
-        run: npm install @kilianpaquier/semantic-release-backmerge@1.6.20 -D
-      - name: Run Semantic Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npx semantic-release --extends ./.releaserc.backmerge.json
+          type: now
+          from_branch: master
+          target_branch: development
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: 'chore(release): merge branch master into development [skip ci]'

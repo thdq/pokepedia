@@ -1,3 +1,86 @@
+# [2.11.0](https://github.com/thdq/pokepedia/compare/v2.10.0...v2.11.0) (2025-11-27)
+
+
+### Features
+
+* update backmerge workflow to merge master into development using devmasx/merge-branch action ([8d4581b](https://github.com/thdq/pokepedia/commit/8d4581bb8eb466a37dcbc0429b83a7c456f4c799))
+
+# [2.10.0](https://github.com/thdq/pokepedia/compare/v2.9.0...v2.10.0) (2025-11-27)
+
+
+### Features
+
+* add padding and margin to sidebar component ([#22](https://github.com/thdq/pokepedia/issues/22)) ([986119b](https://github.com/thdq/pokepedia/commit/986119b7ca708f2d480b088bcd002ec7610f0b28))
+
+# [2.9.0](https://github.com/thdq/pokepedia/compare/v2.8.0...v2.9.0) (2025-11-27)
+
+
+### Features
+
+* update backmerge workflow trigger to use workflow_run on successful completion ([f5c5c73](https://github.com/thdq/pokepedia/commit/f5c5c735225907d591068bcef3229294e6d53426))
+
+# [2.8.0](https://github.com/thdq/pokepedia/compare/v2.7.0...v2.8.0) (2025-11-27)
+
+
+### Features
+
+* update GitHub Actions workflow to use GITHUB_TOKEN instead of PAT_TOKEN ([70d2319](https://github.com/thdq/pokepedia/commit/70d2319f1e44c0ce200421f14e2d1296c50c30f4))
+
+# [2.7.0](https://github.com/thdq/pokepedia/compare/v2.6.1...v2.7.0) (2025-11-27)
+
+
+### Features
+
+* update GitHub Actions workflow to use PAT_TOKEN instead of GITHUB_TOKEN ([3e253d2](https://github.com/thdq/pokepedia/commit/3e253d2ca77b5a9d613a39d04e6f0d78429ed334))
+
+## [2.6.1](https://github.com/thdq/pokepedia/compare/v2.6.0...v2.6.1) (2025-11-26)
+
+
+### Bug Fixes
+
+* update release commit message format to remove notes ([d98f3db](https://github.com/thdq/pokepedia/commit/d98f3dbc237a05e9e03aa127c86ae71369cf74e3))
+
+# [2.6.0](https://github.com/thdq/pokepedia/compare/v2.5.1...v2.6.0) (2025-11-26)
+
+
+### Features
+
+* **release:** update release commit message format to include [semantic-release] ([db5b714](https://github.com/thdq/pokepedia/commit/db5b71462b3f01498d0f135056cb5b7a0b35dc15))
+
+## [2.5.1](https://github.com/thdq/pokepedia/compare/v2.5.0...v2.5.1) (2025-11-26)
+
+
+### Bug Fixes
+
+* update backmerge workflow trigger to workflow_dispatch ([64d804e](https://github.com/thdq/pokepedia/commit/64d804e89024e9a81f2a34af2cddaafa437c9346))
+
+# [2.5.0](https://github.com/thdq/pokepedia/compare/v2.4.0...v2.5.0) (2025-11-26)
+
+
+### Bug Fixes
+
+* remove unnecessary blank line in generations.vue ([#20](https://github.com/thdq/pokepedia/issues/20)) ([4335f95](https://github.com/thdq/pokepedia/commit/4335f9539dc81672e57340a404f5535819f1c638))
+* update backmerge workflow to use workflow_call trigger ([e7173fe](https://github.com/thdq/pokepedia/commit/e7173fe056248b43c01f0aa1d329292af369a1f8))
+* update semantic-release command to use master configuration ([715204a](https://github.com/thdq/pokepedia/commit/715204a0fb70dde65bcddf77d89f5e72ada76f0e))
+
+
+### Features
+
+* change 6 ([#16](https://github.com/thdq/pokepedia/issues/16)) ([74b2c73](https://github.com/thdq/pokepedia/commit/74b2c73d90187db4dcddc7b9b0cf21d736663b5b))
+* remove obsolete semantic-release configuration files ([1cae1bc](https://github.com/thdq/pokepedia/commit/1cae1bca1ae9af347acae7221d770b8c61732dbf))
+
+# [2.6.0](https://github.com/thdq/pokepedia/compare/v2.5.0...v2.6.0) (2025-11-26)
+
+
+### Bug Fixes
+
+* remove unnecessary blank line in generations.vue ([#20](https://github.com/thdq/pokepedia/issues/20)) ([4335f95](https://github.com/thdq/pokepedia/commit/4335f9539dc81672e57340a404f5535819f1c638))
+
+
+### Features
+
+* change 6 ([#16](https://github.com/thdq/pokepedia/issues/16)) ([74b2c73](https://github.com/thdq/pokepedia/commit/74b2c73d90187db4dcddc7b9b0cf21d736663b5b))
+
 # [2.6.0](https://github.com/thdq/pokepedia/compare/v2.5.0...v2.6.0) (2025-11-26)
 
 
