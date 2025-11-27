@@ -24,9 +24,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package.json', '**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Install semantic release npm package
-        run: npm install @semantic-release/changelog@6.0.3 @semantic-release/git@10.0.1 -D
       - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --extends ./.releaserc.release.json
+        run: npx semantic-release@25 --extends ./.releaserc.release.json
