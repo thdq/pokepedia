@@ -1,4 +1,4 @@
-interface GenericModel {
+type GenericModel = {
     name: string
     url: string
 }
