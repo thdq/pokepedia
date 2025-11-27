@@ -16,6 +16,9 @@ export default defineComponent({
 </script>
 
 <style>
+.pok-sidebar {
+    @apply my-8 w-full px-6
+}
 
 #app {
     @apply flex flex-1
