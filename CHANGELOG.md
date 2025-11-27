@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/thdq/pokepedia/compare/v2.9.0...v2.10.0) (2025-11-27)
+
+
+### Features
+
+* add padding and margin to sidebar component ([#22](https://github.com/thdq/pokepedia/issues/22)) ([986119b](https://github.com/thdq/pokepedia/commit/986119b7ca708f2d480b088bcd002ec7610f0b28))
+
 # [2.9.0](https://github.com/thdq/pokepedia/compare/v2.8.0...v2.9.0) (2025-11-27)
 
 
