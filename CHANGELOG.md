@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/thdq/pokepedia/compare/v2.7.0...v2.8.0) (2025-11-27)
+
+
+### Features
+
+* update GitHub Actions workflow to use GITHUB_TOKEN instead of PAT_TOKEN ([70d2319](https://github.com/thdq/pokepedia/commit/70d2319f1e44c0ce200421f14e2d1296c50c30f4))
+
 # [2.7.0](https://github.com/thdq/pokepedia/compare/v2.6.1...v2.7.0) (2025-11-27)
 
 
