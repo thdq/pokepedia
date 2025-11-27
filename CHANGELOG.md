@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/thdq/pokepedia/compare/v2.12.0...v2.13.0) (2025-11-27)
+
+
+### Features
+
+* update backmerge workflow to use manual git commands for merging master into development and remove Firebase hosting workflows ([1d0cf7d](https://github.com/thdq/pokepedia/commit/1d0cf7d1b17c7489dc7e84e8eb3eca7af3cdbf49))
+
 # [2.12.0](https://github.com/thdq/pokepedia/compare/v2.11.0...v2.12.0) (2025-11-27)
 
 
