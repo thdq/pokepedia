@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/thdq/pokepedia/compare/v2.8.0...v2.9.0) (2025-11-27)
+
+
+### Features
+
+* update backmerge workflow trigger to use workflow_run on successful completion ([f5c5c73](https://github.com/thdq/pokepedia/commit/f5c5c735225907d591068bcef3229294e6d53426))
+
 # [2.8.0](https://github.com/thdq/pokepedia/compare/v2.7.0...v2.8.0) (2025-11-27)
 
 
