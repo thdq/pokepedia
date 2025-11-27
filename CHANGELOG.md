@@ -1,3 +1,10 @@
+# [2.14.0](https://github.com/thdq/pokepedia/compare/v2.13.1...v2.14.0) (2025-11-27)
+
+
+### Features
+
+* update backmerge workflow to use rebase instead of merge for syncing development with master ([bcecaa2](https://github.com/thdq/pokepedia/commit/bcecaa2edc6e63e9be139540372f92460a86e91a))
+
 ## [2.13.1](https://github.com/thdq/pokepedia/compare/v2.13.0...v2.13.1) (2025-11-27)
 
 
