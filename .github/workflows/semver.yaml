@@ -13,13 +13,13 @@ jobs:
       pull-requests: write
       issues: write
     env:
-      GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+      GITHUB_TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -35,5 +35,5 @@ jobs:
         run: npm ci
       - name: Run Semantic Release
         env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
         run: npx semantic-release@25 --extends ./.releaserc.release.json
