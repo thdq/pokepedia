@@ -5,7 +5,7 @@ on:
     types:
       - completed
     branches:
-      - master
+      - main
 
 jobs:
   main:
@@ -23,18 +23,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Backmerge master to development (rebase)
+      - name: Backmerge main to development (rebase)
         run: |
           git fetch origin
           git checkout development
 
-          # Check if development already contains all commits from master
-          if git merge-base --is-ancestor origin/master HEAD; then
-            echo "✓ Development is already up-to-date with master. No rebase needed."
+          # Check if development already contains all commits from main
+          if git merge-base --is-ancestor origin/main HEAD; then
+            echo "✓ Development is already up-to-date with main. No rebase needed."
             exit 0
           fi
 
-          # Rebase development onto master
-          git rebase origin/master
+          # Rebase development onto main
+          git rebase origin/main
           git push origin development --force-with-lease
-          echo "✓ Successfully rebased development onto master"
+          echo "✓ Successfully rebased development onto main"

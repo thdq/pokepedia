@@ -1,0 +1,28 @@
+name: PR Title Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+    branches:
+      - development
+      - main
+
+jobs:
+  check-pr-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate PR title
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          echo "PR title: $PR_TITLE"
+
+          if [[ ! $PR_TITLE =~ ^(feat|fix|perf)(\(.+\))?: ]]; then
+            echo "❌ Error: PR title must start with 'feat:', 'fix:', or 'perf:' when targeting development"
+            echo "Your PR title: $PR_TITLE"
+            echo "Optionally, you can include a scope: 'feat(scope):', 'fix(scope):', or 'perf(scope):'"
+            echo "This is required for semantic release to work correctly with squash merge"
+            exit 1
+          fi
+
+          echo "✅ PR title is valid for development"
+

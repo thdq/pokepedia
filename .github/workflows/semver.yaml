@@ -2,7 +2,7 @@ name: Semantic version Pipeline
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   main:
