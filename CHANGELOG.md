@@ -1,3 +1,10 @@
+# [2.20.0](https://github.com/thdq/pokepedia/compare/v2.19.0...v2.20.0) (2025-12-01)
+
+
+### Features
+
+* remove PR title check workflow for development branch ([3f6b20a](https://github.com/thdq/pokepedia/commit/3f6b20a6d9daa24770c07082e63ac0dd5ae75bf5))
+
 # [2.19.0](https://github.com/thdq/pokepedia/compare/v2.18.0...v2.19.0) (2025-12-01)
 
 
