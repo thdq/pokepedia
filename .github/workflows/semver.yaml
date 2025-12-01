@@ -44,3 +44,4 @@ jobs:
           manifest-path: package.json
           workspace: ${{ github.workspace }}
           ref: master
+          overwrite: true
