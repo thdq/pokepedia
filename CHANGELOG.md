@@ -1,3 +1,10 @@
+# [2.17.0](https://github.com/thdq/pokepedia/compare/v2.16.0...v2.17.0) (2025-12-01)
+
+
+### Features
+
+* update workflows to use 'main' branch instead of 'master' and remove unused configurations ([47710d5](https://github.com/thdq/pokepedia/commit/47710d539c7288cb2e2cbac8c8bb31f1e74e5d27))
+
 # [2.16.0](https://github.com/thdq/pokepedia/compare/v2.15.0...v2.16.0) (2025-12-01)
 
 
