@@ -1,3 +1,10 @@
+# [2.16.0](https://github.com/thdq/pokepedia/compare/v2.15.0...v2.16.0) (2025-12-01)
+
+
+### Features
+
+* upgrade actions/checkout to v6 and switch to RELEASE_PAT for authentication in backmerge workflow ([93707a8](https://github.com/thdq/pokepedia/commit/93707a80b53c58a03032de18c3df814235c8168d))
+
 # [2.15.0](https://github.com/thdq/pokepedia/compare/v2.14.0...v2.15.0) (2025-12-01)
 
 
