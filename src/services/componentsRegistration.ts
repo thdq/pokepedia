@@ -7,8 +7,7 @@ import TimelineItem from '../components/base/timeline-item/timeline-item.vue'
 import Table from '../components/base/table/table.vue'
 import ScrollLoader from '../components/base/scroll-loader/scroll-loader.vue'
 
-export default (app: App): void => {
-
+export default (app: App): void | Promise<void> => {
     app.component("Card", Card)
     app.component("Skeleton", Skeleton)
     app.component("Chips", Chips)
@@ -16,5 +15,4 @@ export default (app: App): void => {
     app.component("TimelineItem", TimelineItem)
     app.component("Table", Table)
     app.component("ScrollLoader", ScrollLoader)
-
 }
