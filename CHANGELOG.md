@@ -1,3 +1,19 @@
+# [2.15.0](https://github.com/thdq/pokepedia/compare/v2.14.0...v2.15.0) (2025-12-01)
+
+
+### Bug Fixes
+
+* update GitHub Actions workflow to use DEPLOY_KEY for GITHUB_TOKEN in semantic-release step ([9e94fc6](https://github.com/thdq/pokepedia/commit/9e94fc6f3982f252e1404093c79de26324c9db4f))
+* update GitHub Actions workflow to use RELEASE_PAT for GITHUB_TOKEN in checkout and semantic release steps ([e07493c](https://github.com/thdq/pokepedia/commit/e07493ce625757cb7deef00b053e2943f51bc909))
+
+
+### Features
+
+* remove .releaserc.release.json configuration and clean up semantic-release action in GitHub workflow ([8ab4f3e](https://github.com/thdq/pokepedia/commit/8ab4f3ea4e6446050825f891eb0afbd1d2f90266))
+* replace Tag Commit step with Git Version step in GitHub Actions workflow ([6ade00c](https://github.com/thdq/pokepedia/commit/6ade00c8d76da45198f81e2515229384a72c6484))
+* update actions/checkout version to v6 in GitHub Actions workflow ([297cccc](https://github.com/thdq/pokepedia/commit/297ccccae1d1f7c015202eab93304799d10de40c))
+* update GitHub Actions workflow to use semantic-release-action with changelog and git plugins ([205b6cf](https://github.com/thdq/pokepedia/commit/205b6cf89ee71ce56353490624a6427c6a67039e))
+
 # [2.14.0](https://github.com/thdq/pokepedia/compare/v2.13.1...v2.14.0) (2025-11-27)
 
 
