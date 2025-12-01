@@ -1,3 +1,10 @@
+# [2.18.0](https://github.com/thdq/pokepedia/compare/v2.17.0...v2.18.0) (2025-12-01)
+
+
+### Features
+
+* allow componentsRegistration to return a Promise for asynchronous component registration ([#28](https://github.com/thdq/pokepedia/issues/28)) ([865dc53](https://github.com/thdq/pokepedia/commit/865dc53a82165e4d5218a517324a0dd86a41d0a8))
+
 # [2.17.0](https://github.com/thdq/pokepedia/compare/v2.16.0...v2.17.0) (2025-12-01)
 
 
