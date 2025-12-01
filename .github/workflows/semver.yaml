@@ -37,13 +37,11 @@ jobs:
         # env:
         #   GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
         # run: npx semantic-release@25 --extends ./.releaserc.release.json
-      - name: Git Version
-        id: version
-        uses: codacy/git-version@2.7.1
-
-      - name: Use the version
-        run: |
-          echo ${{ steps.version.outputs.version }}
-      - name: Use the previous version
-        run: |
-          echo ${{ steps.version.outputs.previous-version }}
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v6
+        with:
+          extra_plugins: |
+            @semantic-release/changelog@6.0.3
+            @semantic-release/git@10.0.1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
