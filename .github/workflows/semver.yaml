@@ -13,13 +13,13 @@ jobs:
       pull-requests: write
       issues: write
     env:
-      GITHUB_TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
+      GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          fetch-tags: true
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -33,7 +33,14 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install dependencies
         run: npm ci
-      - name: Run Semantic Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.SSH_PRIVATE_KEY }}
-        run: npx semantic-release@25 --extends ./.releaserc.release.json
+      # - name: Run Semantic Release
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+        # run: npx semantic-release@25 --extends ./.releaserc.release.json
+      - name: Tag Commit
+        id: tag-commit
+        uses: issue-ops/semver@v2.6.0
+        with:
+          manifest-path: package.json
+          workspace: ${{ github.workspace }}
+          ref: master
