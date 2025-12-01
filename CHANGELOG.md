@@ -1,3 +1,10 @@
+# [2.19.0](https://github.com/thdq/pokepedia/compare/v2.18.0...v2.19.0) (2025-12-01)
+
+
+### Features
+
+* remove 'main' branch from development branch name check workflow ([28a77cc](https://github.com/thdq/pokepedia/commit/28a77cc33865b1325fc0bc507edae8ff33102b20))
+
 # [2.18.0](https://github.com/thdq/pokepedia/compare/v2.17.0...v2.18.0) (2025-12-01)
 
 
