@@ -13,8 +13,8 @@ const app = createApp(App)
 useRouter(app);
 useGlobalComponents(app);
 useGlobalDirectives(app);
-useAxios(app)
-useHead(app)
-useI18n(app)
+useAxios(app);
+useHead(app);
+useI18n(app);
 
 app.mount('#app')
