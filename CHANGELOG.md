@@ -1,3 +1,10 @@
+# [2.21.0](https://github.com/thdq/pokepedia/compare/v2.20.0...v2.21.0) (2025-12-05)
+
+
+### Features
+
+* change FlavorTextEntires from interface to type for consistency in type definitions ([#26](https://github.com/thdq/pokepedia/issues/26)) ([123e04b](https://github.com/thdq/pokepedia/commit/123e04bbb6673cdfb4bcfe7bdb2bb8db3a0404eb))
+
 # [2.20.0](https://github.com/thdq/pokepedia/compare/v2.19.0...v2.20.0) (2025-12-01)
 
 
