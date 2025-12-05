@@ -10,9 +10,9 @@ import useI18n from './services/i18nRegistration'
 
 const app = createApp(App)
 
-useRouter(app)
-useGlobalComponents(app)
-useGlobalDirectives(app)
+useRouter(app);
+useGlobalComponents(app);
+useGlobalDirectives(app);
 useAxios(app)
 useHead(app)
 useI18n(app)
